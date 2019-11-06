@@ -1,6 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import {Row, Col} from 'react-bootstrap';
+
+const TopMenu = styled(Row)`
+
+`
 
 const Menu = () => (
 	<Row>
