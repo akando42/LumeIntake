@@ -98,6 +98,7 @@ const FormPage = () => (
 				
 			</Form.Group>
 		</LumeForm>
+		<Menu />
 	</PageContainer>
 );
 
