@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactPage = () => (
-	<div> ContactPage </div>
+	<div>ContactPage </div>
 );
 
 export default ContactPage;

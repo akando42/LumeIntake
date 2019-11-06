@@ -16,9 +16,9 @@ import ContactPage from './components/ContactPage';
 const App = () => (
     <Router>
       <Switch>
-        <Route exact path="/admin" component={AdminPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/" component={FormPage} />
+        <Route exact path="/" component={FormPage} />
+        <Route path="/admin" component={AdminPage} />
+        <Route path="/contact" component={ContactPage} /> 
       </Switch>
     </Router>
 );
