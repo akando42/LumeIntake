@@ -19,8 +19,6 @@ import FifthStrike from './strikes/FifthStrike';
 
 import AdminPage from './components/AdminPage';
 
-
-
 const App = () => {
   // let location = useLocation();
   return (

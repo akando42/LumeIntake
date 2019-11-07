@@ -13,8 +13,7 @@ import {
 const PageContainer = styled(Container)`
 	width: 100vw;
 	height: 100vh;
-	background-color: #E7DDD2;
-	text-align: center;
+	background-color: #E7DDD2;	
 `
 const Title = styled(Row)`
  	padding: 50px 0px;
@@ -37,22 +36,30 @@ const LumeForm = styled(Form)`
 
 const LumeRow = styled(Form.Row)`
 	padding: 10px 0px;
+	margin: 0px auto;
+	width: 75vw;
 `
 
 const LumeLabel = styled(Form.Label)`
-	width: 10% !important;
 	height: 49px;
 	padding: 0px 20px;
 	font-size: 21px;
+	display: inline-block;
 	font-family: Sailec-Bold;
-	text-align: left;
+	text-align: right;
+	width: 25vw;
 `
 
-const LumeControl = styled(Form.Control)`
-	width: 20% !important;
+const LumeControlBox = styled.div`
+	display: inline-block;
 	height: 49px;
-	padding: 0px 20px;
+	width: 45vw;
+`
+const LumeControl = styled(Form.Control)`
 	text-align: left;
+	height: 49px;
+	width: 30vw;
+	padding: 0px 20px;
 `	
 
 const AdminLink = styled(Link)`
@@ -76,8 +83,10 @@ const InputType = ({questions, title, subtitle, previous, next}) => (
 					questions.map(
 						item => (
 							<LumeRow>
-								<LumeLabel> {item.label} </LumeLabel>
-								<LumeControl type="email" placeholder={item.placeholder} />
+									<LumeLabel> {item.label} </LumeLabel>
+									<LumeControlBox>
+										<LumeControl type="email" placeholder={item.placeholder} />
+									</LumeControlBox>
 							</LumeRow>
 						)
 					)

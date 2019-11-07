@@ -21,8 +21,7 @@ const options = [
 		id: 3,
 		title: 'JUST GETTING STARTED',
 	 	content:'I haven’t spent a lot of time or energy on my health and wellness'
-	}
-]
+	}]
 
 const FifthStrike = () => (
 	<div>
