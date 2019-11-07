@@ -1,36 +1,37 @@
 import React from 'react';
 import InputType from '../../components/InputType';
-
+import CheckBoxType from '../../components/CheckBoxType';
 
 const title = 'What’s the reason for your visit today?'
 const subtitle = 'Please select all that apply'
 const previous = '/10SS-5'
 const next = '/10SS-11'
-const questions = [
+const options = [
 	{
-		'label':'Email',
-		'placeholder':'Please Input Your Email'
+		id: 1,
+	 	content:'JUST CHECKING IT OUT'
 	},
 	{
-		'label': 'Name',
-		'placeholder':'Please Input Your Full Name'
+		id: 2,
+	 	content:'OVERALL WELLNESS',
 	},
 	{
-		'label':'DOB',
-		'placeholder':'dd/mm/yyyy'
+		id: 3,
+	 	content:'TO ADDRESS A SPECIFIC CONCERN'
 	}
 ]
 
-const ThirdStrike = () => (
+const FourthStrike = () => (
 	<div>
-		<InputType
-		    questions={questions} 
+		<CheckBoxType
+		    options={options} 
 		    title={title}
 		    subtitle={subtitle} 
-		    previous={previous}
 		    next={next}
+		    previous={previous}
 		/>
+
 	</div>
 )
 
-export default ThirdStrike;
+export default FourthStrike;

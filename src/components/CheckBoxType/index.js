@@ -3,12 +3,7 @@ import Menu from "../Menu";
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
-import {
-	Col,
-	Row, 
-	Form, 
-	Container,
-} from 'react-bootstrap';
+import {Row, Form, Col, Container} from 'react-bootstrap';
 
 const PageContainer = styled(Container)`
 	width: 100vw;
@@ -25,11 +20,11 @@ const Title = styled(Row)`
 	width: 100vw;`
 
 const Subtitle = styled(Row)`
-	padding: 50px 0px;
+	padding: 0px 0px 50px 0px;
 	text-align: center;
 	color: #35454F;
 	font-size: 30px;
-	font-family: Sailec-Bold;`
+	font-family: Sailec-Regular;`
 
 const LumeForm = styled(Form)`
 	width: 100% !important;
@@ -55,37 +50,65 @@ const LumeControl = styled(Form.Control)`
 	text-align: left;
 `	
 
+const LumeOption = styled(Form.Check)`
+	text-align: left
+	margin: 0 auto;
+	width: 55%;
+	padding: 20px 0px;
+
+	.form-check-input {
+		margin: 0px 0px 0px 100px;
+		width: 30px !important;
+		height: 30px !important;
+		background-color: white;
+		color: black;
+	}
+
+	label {
+		padding: 0px 0px 0px 50px;
+		font-family: Sailec-Bold;
+		font-size: 30px;
+	}
+`
+
 const AdminLink = styled(Link)`
     position: absolute;
     right: 50px;
     top: 50px;
 `
 
-
-const InputType = ({questions, title, subtitle, previous, next}) => (
+const CheckBoxType = ({title, subtitle, options, previous, next}) => (
 	<PageContainer>
 		<AdminLink to="/admin">Admin</AdminLink>
 
 		<Title>LUME</Title>
+		<Title>
+			{title}
+		</Title>
 		<Subtitle>
-			Welcome! Let's confirm it's you...
+			{subtitle}
 		</Subtitle>
 		<LumeForm>
-			<Form.Group controlId="formHorizontalEmail">
-				{
-					questions.map(
-						item => (
-							<LumeRow>
-								<LumeLabel> {item.label} </LumeLabel>
-								<LumeControl type="email" placeholder={item.placeholder} />
-							</LumeRow>
+		    <Form.Group controlId="formHorizontalEmail">
+				<Col>
+					{
+						options.map( 
+							item => (
+								<LumeOption
+									type="radio"
+									label={item.content}
+									name="formHorizontalRadios"
+									id={item.id}
+								/>
+							)
 						)
-					)
-				}
-			</Form.Group>
+					}
+					
+				</Col>
+		    </Form.Group>
 		</LumeForm>
 		<Menu previous={previous} next={next} />
 	</PageContainer>
 );
 
-export default InputType; 
+export default CheckBoxType;
