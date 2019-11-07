@@ -3,21 +3,9 @@ import Menu from "../Menu";
 import styled from 'styled-components';
 import {
 	Row, 
-	Col, 
 	Form, 
-	FormGroup, 
-	FormLabel,
 	Container,
 } from 'react-bootstrap';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import Slider from 'react-slick';
 
 const PageContainer = styled(Container)`
 	width: 100vw;
@@ -56,6 +44,7 @@ const LumeLabel = styled(Form.Label)`
 	font-family: Sailec-Bold;
 	text-align: left;
 `
+
 const LumeControl = styled(Form.Control)`
 	width: 20% !important;
 	height: 49px;
@@ -63,22 +52,8 @@ const LumeControl = styled(Form.Control)`
 	text-align: left;
 `	
 
-const questions = [
-	{
-		'label':'Email',
-		'placeholder':'Please Input Your Email'
-	},
-	{
-		'label': 'Name',
-		'placeholder':'Please Input Your Full Name'
-	},
-	{
-		'label':'DOB',
-		'placeholder':'dd/mm/yyyy'
-	}
-]
 
-const FormPage = () => (
+const InputType = ({questions, title, subtitle, previous, next}) => (
 	<PageContainer>
 		<Title>LUME</Title>
 		<Subtitle>
@@ -94,12 +69,12 @@ const FormPage = () => (
 								<LumeControl type="email" placeholder={item.placeholder} />
 							</LumeRow>
 						)
-				)}
-				
+					)
+				}
 			</Form.Group>
 		</LumeForm>
-		<Menu />
+		<Menu previous={previous} next={next} />
 	</PageContainer>
 );
 
-export default FormPage; 
+export default InputType; 
