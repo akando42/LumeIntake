@@ -20,8 +20,8 @@ const App = () => (
         <Route path="/10SS-5" component={SecondStrike} />
         <Route path="/10SS-10" component={ThirdStrike} />
         <Route path="/10SS-11" component={FourthStrike} />
-        
-        <Route path="/admin" component={AdminPage} />
+
+        <Route exact path="/admin" component={AdminPage} />
       </Switch>
     </Router>
 );
