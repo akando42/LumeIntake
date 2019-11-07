@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { ConnectedRouter } from 'connected-react-router';
 import {
   Switch,
   BrowserRouter as Router,
@@ -21,7 +21,7 @@ const App = () => (
         <Route path="/10SS-10" component={ThirdStrike} />
         <Route path="/10SS-11" component={FourthStrike} />
 
-        <Route exact path="/admin" component={AdminPage} />
+        <Route path="/admin" exact component={AdminPage} />
       </Switch>
     </Router>
 );
