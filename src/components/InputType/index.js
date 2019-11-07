@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from "../Menu";
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 import {
 	Row, 
 	Form, 
@@ -52,9 +54,17 @@ const LumeControl = styled(Form.Control)`
 	text-align: left;
 `	
 
+const AdminLink = styled(Link)`
+    position: absolute;
+    right: 50px;
+    top: 50px;
+`
+
 
 const InputType = ({questions, title, subtitle, previous, next}) => (
 	<PageContainer>
+		<AdminLink to="/admin">Admin</AdminLink>
+
 		<Title>LUME</Title>
 		<Subtitle>
 			Welcome! Let's confirm it's you...

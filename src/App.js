@@ -17,11 +17,10 @@ const App = () => (
     <Router>
       <Switch>
         <Route exact path="/" component={FirstStrike} />
-        <Route path="/10SS-5" component={SecondStrike} />
-        <Route path="/10SS-10" component={ThirdStrike} />
-        <Route path="/10SS-11" component={FourthStrike} />
-
-        <Route path="/admin" exact component={AdminPage} />
+        <Route exact path="/10SS-5" component={SecondStrike} />
+        <Route exact path="/10SS-10" component={ThirdStrike} />
+        <Route exact path="/10SS-11" component={FourthStrike} />
+        <Route exact path="/admin" component={AdminPage} />
       </Switch>
     </Router>
 );
