@@ -1,11 +1,13 @@
+import { Col, Row, Form, Container, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Col, Row, Form, Container} from 'react-bootstrap';
+
 
 export const PageContainer = styled(Container)`
 	height: 100vh;
 	background-color: #E7DDD2;	
 `
+
 export const Title = styled(Col)`
  	padding: 50px 0px;
  	color: #35454F;

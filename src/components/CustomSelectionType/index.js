@@ -18,7 +18,7 @@ import {
 } from './styles';
 
 const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
-	<PageContainer>
+	<PageContainer fluid="true">
         <AdminLink to="/admin">Admin</AdminLink>
         <Logo>LUME</Logo>
         
@@ -35,13 +35,13 @@ const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
        		{
        			options.map(
        				item => (
-   						<Option>
+   						<Option md={2} lg={2} sm={6}>
    							<ButtonRow>
    								<SelectButton icon={item.icon} /> 
    							</ButtonRow>
-   							<Row>
-   								<SelectLabel> {item.name} </SelectLabel>
-   							</Row>
+                <Row>
+   							  <SelectLabel> {item.name} </SelectLabel>
+                </Row>
    						</Option>
        				)
        			)
