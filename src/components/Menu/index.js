@@ -4,26 +4,29 @@ import {Link} from 'react-router-dom';
 
 const ArrowMenu = styled.div`
 	font-family: Sailec-Bold;
+	text-decoration: none;
 	display: inline-block;
-	width: 100vw;
 	position: absolute;
+	width: 100vw;
 	bottom: 10vh;
 	left: 0px;
 `
 
 const PreviousLink = styled(Link)`
-    text-decoration: none;
     float: left;
+    text-transform: uppercase;
+    text-decoration: none !important;
     padding-left: 5vw;
     font-size: 30px;
-    text-transform: uppercase;
+    color: #343a40;
 `
 const NextLink = styled(Link)`
-    text-decoration: none;
-    float: right;
-    padding-right: 5vw;
-    font-size: 30px;
+    text-decoration: none !important;
     text-transform: uppercase;
+    padding-right: 5vw;
+	font-size: 30px;
+	color: #343a40;
+    float: right;
 `
 
 const Menu = (props) => (

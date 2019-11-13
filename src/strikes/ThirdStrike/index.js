@@ -22,16 +22,13 @@ const options = [
 ]
 
 const FourthStrike = () => (
-	<div>
-		<CheckBoxType
-		    options={options} 
-		    title={title}
-		    subtitle={subtitle} 
-		    next={next}
-		    previous={previous}
-		/>
-
-	</div>
+	<CheckBoxType
+	    options={options} 
+	    title={title}
+	    subtitle={subtitle} 
+	    next={next}
+	    previous={previous}
+	/>
 )
 
 export default FourthStrike;

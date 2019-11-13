@@ -1,5 +1,14 @@
-import React from 'react';
+import axios from 'axios';
+import React, {memo, useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import InputType from '../../components/InputType';
+import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+
+import saga from './saga';
+import reducer from './reducer';
+import { loadAllQuestionsRequest } from './actions';
 
 const title = ''
 const subtitle = ''
@@ -19,15 +28,30 @@ const questions = [
 	}
 ]
 
-const FirstStrike = () => (
-	<div>
+export function FirstStrike({loadAllQuestionsRequest}){
+	const [intakeQuestions, setIntakeQuestions] = useState([]);
+
+	async function getQuestions(){
+		const res = await axios.get(
+	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
+	    );
+	    console.log("Getting Questions from APIs with responses", res.data.questions);
+	    setIntakeQuestions(res.data.questions);
+	}
+	useEffect(() => {
+		getQuestions();
+		// loadAllQuestionsRequest();
+	}, [])
+	return (
 		<InputType
-		    questions={questions} 
+		    questions={intakeQuestions} 
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
 		/>
-	</div>
-)
+	);
+}
+	
+
 
 export default FirstStrike;

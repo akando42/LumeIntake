@@ -5,7 +5,7 @@ import CheckBoxType from '../../components/CheckBoxType';
 const title = 'What’s the reason for your visit today?'
 const subtitle = 'Please select all that apply'
 const previous = '/10SS-10'
-const next = '/'
+const next = '/10SS-6'
 const options = [
 	{
 		id: 1,

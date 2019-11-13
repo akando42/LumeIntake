@@ -3,80 +3,35 @@ import Menu from "../Menu";
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
-import {
-	Col,
-	Row, 
-	Form, 
-	Container,
-} from 'react-bootstrap';
-
-const PageContainer = styled(Container)`
-	width: 100vw;
-	height: 100vh;
-	background-color: #E7DDD2;	
-`
-const Title = styled(Row)`
- 	padding: 50px 0px;
- 	color: #35454F;
-	text-align: center;
-	font-size: 50px;
-	font-family: Sailec-Bold;
-	width: 100vw;`
-
-const Subtitle = styled(Row)`
-	padding: 50px 0px;
-	text-align: center;
-	color: #35454F;
-	font-size: 30px;
-	font-family: Sailec-Bold;`
-
-const LumeForm = styled(Form)`
-	width: 100% !important;
-`
-
-const LumeRow = styled(Form.Row)`
-	padding: 10px 0px;
-	margin: 0px auto;
-	width: 75vw;
-`
-
-const LumeLabel = styled(Form.Label)`
-	height: 49px;
-	padding: 0px 20px;
-	font-size: 21px;
-	display: inline-block;
-	font-family: Sailec-Bold;
-	text-align: right;
-	width: 25vw;
-`
-
-const LumeControlBox = styled.div`
-	display: inline-block;
-	height: 49px;
-	width: 45vw;
-`
-const LumeControl = styled(Form.Control)`
-	text-align: left;
-	height: 49px;
-	width: 30vw;
-	padding: 0px 20px;
-`	
-
-const AdminLink = styled(Link)`
-    position: absolute;
-    right: 50px;
-    top: 50px;
-`
-
+import { Col, Row, Form, Container} from 'react-bootstrap';
+import { 
+	PageContainer, 
+	Title, 
+	Subtitle, 
+	LumeForm,
+	LumeRow, 
+	LumeLabel,
+	LumeControl,
+	LumeControlBox,
+	AdminLink,
+} from './styles'
 
 const InputType = ({questions, title, subtitle, previous, next}) => (
-	<PageContainer>
-		<AdminLink to="/admin">Admin</AdminLink>
+	<PageContainer fluid="true">
+		<Row>
+			<AdminLink to="/admin">Admin</AdminLink>
+		</Row>
+		
+		<Row>
+			<Title md={{span: '6', offset: '3'}} xs={12}>
+				LUME
+			</Title>
+		</Row>
 
-		<Title>LUME</Title>
-		<Subtitle>
-			Welcome! Let's confirm it's you...
-		</Subtitle>
+		<Row>
+			<Subtitle> Welcome! Let's confirm it's you... </Subtitle>
+		</Row>
+
 		<LumeForm>
 			<Form.Group controlId="formHorizontalEmail">
 				{
