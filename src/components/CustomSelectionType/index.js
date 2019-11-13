@@ -39,14 +39,18 @@ const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
    							<ButtonRow>
    								<SelectButton icon={item.icon} /> 
    							</ButtonRow>
+                
                 <Row>
-   							  <SelectLabel> {item.name} </SelectLabel>
+   							  <SelectLabel>
+                    {item.name} 
+                  </SelectLabel>
                 </Row>
    						</Option>
        				)
        			)
        		}
        	</OptionsList>
+        <Menu previous={previous} next={next} />
 	</PageContainer>
 )
 

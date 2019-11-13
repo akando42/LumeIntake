@@ -31,27 +31,31 @@ const CheckBoxType = ({title, subtitle, options, previous, next}) => (
 				{subtitle}
 			</Subtitle>
 		</Row>
-		<LumeForm>
-		    <Form.Group controlId="formHorizontalEmail">
-				<Col>
-					{
-						options.map( 
-							item => (
-								<LumeRow>
-									<LumeOption
-										type="radio"
-										label={item.content}
-										name="formHorizontalRadios"
-										id={item.id}
-									/>
-								</LumeRow>
-							)
-						)
-					}
-					
-				</Col>
-		    </Form.Group>
-		</LumeForm>
+		<Row>
+			<LumeForm md={{span: '8', offset: '2'}} sm={{span: '10', offset: '1'}}> 
+				<Form>
+				    <Form.Group controlId="formHorizontalEmail">
+						<Col>
+							{
+								options.map( 
+									item => (
+										<LumeRow>
+											<LumeOption
+												type="radio"
+												label={item.content}
+												name="formHorizontalRadios"
+												id={item.id}
+											/>
+										</LumeRow>
+									)
+								)
+							}
+							
+						</Col>
+				    </Form.Group>
+			    </Form>
+			</LumeForm>
+		</Row>
 		<Menu previous={previous} next={next} />
 	</PageContainer>
 );

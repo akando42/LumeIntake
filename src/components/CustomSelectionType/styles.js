@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Col, Row, Form, Container, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { devices } from '../../devices';
 
 export const PageContainer = styled(Container)`
 	height: 100vh;
@@ -13,11 +14,11 @@ export const Logo = styled(Col)`
 	text-align: center;
 	font-size: 36px;
 	font-family: Sailec-Bold;
-	 width: 100vw;
+	width: 100vw;
 `
 
 export const Title = styled(Col)`
-	padding: 50px 0px;
+	padding: 10px 0px;
 	text-align: center;
 	color: #35454F;
 	font-size: 30px;
@@ -49,7 +50,6 @@ export const Option = styled(Col)`
 export const ButtonRow = styled(Row)`
 	top: 0px;
 	position: relative;
-	height: 100px;
 	margin: 0px auto;
 `	
 
@@ -61,6 +61,7 @@ export const SelectButton = styled.button`
 	height: 7vw;
 	width: 7vw;
 	margin: 0 auto;
+	text-decoration: none !important;
 	
 	&:active {
 		border: 3px solid black;
@@ -72,7 +73,20 @@ export const SelectLabel = styled.p`
 	padding: 10px;
 	font-family: Sailec-Bold;
 	text-align: center !important;
-	margin: 30px auto;
+	margin: 10px auto;
+
+	@media ${devices.mobileS}{
+		font-size: 12px;
+	}
+
+	@media ${devices.mobileM}{
+		font-size: 15px;
+	}
+
+	@media ${devices.laptopL}{
+		font-size: 18px;
+	}
+
 `
 
 export const AdminLink = styled(Link)`

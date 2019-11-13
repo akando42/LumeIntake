@@ -7,7 +7,6 @@ import {Row, Form, Col, Container} from 'react-bootstrap';
 export const PageContainer = styled(Container)`
 	background-color: #E7DDD2;
 	height: 100vh;
-	text-align: center;
 `
 
 export const Title = styled(Col)`
@@ -19,7 +18,6 @@ export const Title = styled(Col)`
 	width: 100vw;
 `
 
-
 export const Subtitle = styled(Col)`
 	padding: 0px 0px 50px 0px;
 	text-align: center;
@@ -28,9 +26,8 @@ export const Subtitle = styled(Col)`
 	font-family: Sailec-Regular;
 `
 
-
-export const LumeForm = styled(Form)`
-	width: 100% !important;
+export const LumeForm = styled(Col)`
+	height: auto;
 `
 
 export const LumeRow = styled(Form.Row)`
@@ -41,7 +38,7 @@ export const LumeRow = styled(Form.Row)`
 
 export const LumeLabel = styled(Form.Label)`
 	width: auto;
-	height: 49px;
+	height: auto;
 	padding: 0px 50px;
 	font-size: 21px;
 	font-family: Sailec-Bold;
@@ -49,7 +46,7 @@ export const LumeLabel = styled(Form.Label)`
 `
 
 export const LumeControl = styled(Form.Control)`
-	height: 49px;
+	height: auto;
 	padding: 0px 20px;
 	text-align: left;
 `	
@@ -57,7 +54,6 @@ export const LumeControl = styled(Form.Control)`
 
 export const LumeOption = styled(Form.Check)`
 	text-align: left
-	margin: 0 auto !important;
 	width: 80vw;
 	padding: 20px 75px;
 
@@ -69,9 +65,9 @@ export const LumeOption = styled(Form.Check)`
 	}
 
 	label {
-		padding: 0px 0px 0px 10px;
+		padding: 0px 0px 0px 20px;
 		font-family: Sailec-Bold;
-		font-size: 30px;
+		font-size: 25px;
 	}
 `
 
