@@ -1,8 +1,8 @@
 import React from 'react';
 import SliderType from '../../components/SliderType';
 
-const title = 'What’s the reason for your visit today?'
-const subtitle = 'Please select all that apply'
+const title = "Let’s discuss your `Feels` "
+const subtitle = 'Please move the slider to best reflect your'
 const previous = '/10SS-6'
 const next = '/'
 const selections = [
