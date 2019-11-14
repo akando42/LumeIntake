@@ -47,10 +47,8 @@ const selections = [
 const SliderType = ({title, subtitle, previous, next}) => (
 	<PageContainer fluid="true">
 		<AdminLink to="/admin">Admin</AdminLink>
-        
         <Logo>LUME</Logo>
-        <Title> What are your priorities ? </Title>
-        
+        <Title> {title} </Title>
         <Subtitle>
         	Please select any you're interested in addressing or improving.
        	</Subtitle>
@@ -84,6 +82,7 @@ const SliderType = ({title, subtitle, previous, next}) => (
 	       		}
 	       	</SlideContainer>
        	</Row>
+       	<Menu previous={previous} next={next} />
 	</PageContainer>
 );
 
