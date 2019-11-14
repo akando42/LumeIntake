@@ -85,12 +85,9 @@ export const SelectLabel = styled.p`
 
 	@media ${devices.laptopL}{
 		font-size: 18px;
-	}
-
-`
+	}`
 
 export const AdminLink = styled(Link)`
     position: absolute;
     right: 50px;
-    top: 50px;
-`
+    top: 50px;`

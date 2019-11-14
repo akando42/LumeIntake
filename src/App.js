@@ -16,6 +16,7 @@ import SecondStrike from './strikes/SecondStrike';
 import ThirdStrike from './strikes/ThirdStrike';
 import FourthStrike from './strikes/FourthStrike';
 import FifthStrike from './strikes/FifthStrike';
+import SixStrike from './strikes/SixStrike';
 
 import AdminPage from './components/AdminPage';
 
@@ -34,7 +35,9 @@ const App = () => {
           <Route exact path="/10SS-10" component={ThirdStrike} />
           <Route exact path="/10SS-11" component={FourthStrike} />
           <Route exact path="/10SS-6" component={FifthStrike} />
+          <Route exact path="/10SS-7" component={SixStrike} />
           <Route exact path="/admin" component={AdminPage} />
+          
         </AnimatedSwitch>
       </Router>
   )

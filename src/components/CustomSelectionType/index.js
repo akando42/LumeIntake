@@ -29,7 +29,6 @@ const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
         <Subtitle>
         	Please select any you're interested in addressing or improving.
        	</Subtitle>
-       	<Row> </Row>
        	
        	<OptionsList>
        		{
