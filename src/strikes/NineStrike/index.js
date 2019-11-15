@@ -3,7 +3,7 @@ import SliderType from '../../components/SliderType';
 
 const title = "Let’s discuss your `Looks` "
 const subtitle = 'Please move the slider to best reflect you'
-const previous = '/10SS-7'
+const previous = '/10SS-18'
 const next = '/'
 const selections = [
 	{
@@ -23,7 +23,7 @@ const selections = [
 	}
 ]
 
-const SevenStrike = ({title, subtitle, selections, previous, next}) => (
+const NineStrike = () => (
 	<SliderType 
 		selections={selections}
 		title={title}
@@ -33,4 +33,4 @@ const SevenStrike = ({title, subtitle, selections, previous, next}) => (
 	/>
 )
 
-export default SevenStrike;
+export default NineStrike;
