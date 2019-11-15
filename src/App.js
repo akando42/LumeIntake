@@ -38,7 +38,7 @@ const App = () => {
           <Route exact path="/10SS-11" component={FourthStrike} />
           <Route exact path="/10SS-6" component={FifthStrike} />
           <Route exact path="/10SS-7" component={SixStrike} />
-          <Route exact path="/10SS-18" component={SevenStrike} />
+          <Route exact path="/10SS-8" component={SevenStrike} />
           <Route exact path="/10SS-9" component={NineStrike} />
           <Route exact path="/admin" component={AdminPage} />
           
