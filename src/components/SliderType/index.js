@@ -84,6 +84,7 @@ const SliderType = ({title, subtitle, previous, next}) => (
 	       		}
 	       	</SlideContainer>
        	</Row>
+       	<Menu previous={previous} next={next} />
 	</PageContainer>
 );
 
