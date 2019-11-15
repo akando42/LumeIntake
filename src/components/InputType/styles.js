@@ -2,7 +2,6 @@ import { Col, Row, Form, Container, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 export const PageContainer = styled(Container)`
 	height: 100vh;
 	background-color: #E7DDD2;	
