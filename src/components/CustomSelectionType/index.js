@@ -33,8 +33,8 @@ const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
        	<OptionsList>
        		{
        			options.map(
-       				item => (
-   						<Option md={2} lg={2} sm={6}>
+       				(item, idx) => (
+   						<Option key={"option-"+idx} md={2} lg={2} sm={6}>
    							<ButtonRow>
    								<SelectButton icon={item.icon} /> 
    							</ButtonRow>

@@ -16,40 +16,51 @@ import {
 	AdminLink,
 } from './styles'
 
-const InputType = ({questions, title, subtitle, previous, next}) => (
-	<PageContainer fluid="true">
-		<Row>
-			<AdminLink to="/admin">Admin</AdminLink>
-		</Row>
-		
-		<Row>
-			<Title md={{span: '6', offset: '3'}} xs={12}>
-				LUME
-			</Title>
-		</Row>
+const InputType = ({questions, title, subtitle, previous, next, updateState}) => {
+	function onChange(e) {
+		updateState(e.target.getAttribute('data-id'), e.target.value)
+	}
 
-		<Row>
-			<Subtitle> Welcome! Let's confirm it's you... </Subtitle>
-		</Row>
+	return (
+		<PageContainer fluid="true">
+			<Row>
+				<AdminLink to="/admin">Admin</AdminLink>
+			</Row>
+			
+			<Row>
+				<Title md={{span: '6', offset: '3'}} xs={12}>
+					{title}
+				</Title>
+			</Row>
 
-		<LumeForm>
-			<Form.Group controlId="formHorizontalEmail">
-				{
-					questions.map(
-						item => (
-							<LumeRow>
-									<LumeLabel> {item.label} </LumeLabel>
-									<LumeControlBox>
-										<LumeControl type="email" placeholder={item.placeholder} />
-									</LumeControlBox>
-							</LumeRow>
+			<Row>
+				<Subtitle> {subtitle} </Subtitle>
+			</Row>
+
+			<LumeForm>
+				<Form.Group controlId="formHorizontalEmail">
+					{
+						questions.map(
+							(item, idx) => (
+								<LumeRow key={"question-"+idx}>
+										<LumeLabel> {item.label} </LumeLabel>
+										<LumeControlBox>
+											<LumeControl
+												data-id={idx}
+												type="text"
+												placeholder={item.placeholder}
+												value={item.value}
+												onChange={onChange} />
+										</LumeControlBox>
+								</LumeRow>
+							)
 						)
-					)
-				}
-			</Form.Group>
-		</LumeForm>
-		<Menu previous={previous} next={next} />
-	</PageContainer>
-);
+					}
+				</Form.Group>
+			</LumeForm>
+			<Menu previous={previous} next={next} />
+		</PageContainer>
+	)
+};
 
 export default InputType; 

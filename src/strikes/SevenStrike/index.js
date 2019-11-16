@@ -4,7 +4,7 @@ import SignatureType from '../../components/SignatureType';
 const title = 'Waiver and Release'
 const subtitle = ''
 const previous = '/10SS-7'
-const next = '/'
+const next = '/10SS-9/'
 
 const SevenStrike = () => (
 	<SignatureType 

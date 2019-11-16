@@ -5,36 +5,40 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import InputType from '../../components/InputType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
-import { firstStrike } from '../../tools/api';
 
 import saga from './saga';
 import reducer from './reducer';
 import { loadAllQuestionsRequest } from './actions';
 
-const title = "Let’s discuss your `Feels` "
-const subtitle = 'Please move the slider to best reflect your'
-const next = '/10SS-5'
+const title = 'Now let\'s review your medical history'
+const subtitle = ''
+const previous = '/10SS-10'
+const next = '/10SS-12'
 const questions = [
 	{
-		'label':'Email',
-		'placeholder':'Please Input Your Email'
+		'label':'Please list any known allergies',
+		'placeholder':'leave blank if none'
 	},
 	{
-		'label': 'Name',
-		'placeholder':'Please Input Your Full Name'
+		'label': 'Please list any current or pas medications',
+		'placeholder':'leave blank if none'
 	},
 	{
-		'label':'DOB',
-		'placeholder':'dd/mm/yyyy'
+		'label':'List any vitamins you\'re taking',
+		'placeholder':'leave blank if none'
+	},
+	{
+		'label':'Are you prognant or typing?',
+		'placeholder':'if yes, please explain'
 	}
 ]
 
-export function FirstStrike(props){
+export function ElevenStrike({loadAllQuestionsRequest}){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
 
 	async function getQuestions(){
 		const res = await axios.get(
-	      `${CMS_API_URL}${firstStrike}?token=${CMS_API_TOKEN}`,
+	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
 	    );
 	    console.log("Getting Questions from APIs with responses", res.data.questions);
 	    setIntakeQuestions(res.data.questions);
@@ -43,28 +47,17 @@ export function FirstStrike(props){
 		getQuestions();
 		// loadAllQuestionsRequest();
 	}, [])
-
-	function onChange(idx, value) {
-		let updatedQuestion = intakeQuestions[idx];
-		updatedQuestion.value = value;
-		intakeQuestions[idx] = updatedQuestion;
-
-		setIntakeQuestions(intakeQuestions)
-	}
-
 	return (
 		<InputType
-		    questions={intakeQuestions} 
+		    questions={questions} 
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
-		    updateState={onChange}
+		    previous={previous}
 		/>
 	);
 }
+	
 
 
-
-export default connect(state => ({
-	...state
-}), {})(FirstStrike)
+export default ElevenStrike;

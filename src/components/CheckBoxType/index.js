@@ -16,48 +16,55 @@ import {
 	AdminLink 
 } from './styles'
 
-const CheckBoxType = ({title, subtitle, options, previous, next}) => (
-	<PageContainer fluid="true">
-		<Row>
-			<AdminLink to="/admin">Admin</AdminLink>
-		</Row>
-		<Row>
-			<Title md={{span: '6', offset: '3'}} xs={12}>
-				{title}
-			</Title>
-		</Row>
-		<Row>
-			<Subtitle>
-				{subtitle}
-			</Subtitle>
-		</Row>
-		<Row>
-			<LumeForm md={{span: '8', offset: '2'}} sm={{span: '10', offset: '1'}}> 
-				<Form>
-				    <Form.Group controlId="formHorizontalEmail">
-						<Col>
-							{
-								options.map( 
-									item => (
-										<LumeRow>
-											<LumeOption
-												type="radio"
-												label={item.content}
-												name="formHorizontalRadios"
-												id={item.id}
-											/>
-										</LumeRow>
+const CheckBoxType = ({title, subtitle, options, previous, next, updateState}) => {
+	function onClick(e) {
+		updateState(e.target.id)
+	}
+
+	return (
+		<PageContainer fluid="true">
+			<Row>
+				<AdminLink to="/admin">Admin</AdminLink>
+			</Row>
+			<Row>
+				<Title md={{span: '6', offset: '3'}} xs={12}>
+					{title}
+				</Title>
+			</Row>
+			<Row>
+				<Subtitle>
+					{subtitle}
+				</Subtitle>
+			</Row>
+			<Row>
+				<LumeForm md={{span: '8', offset: '2'}} sm={{span: '10', offset: '1'}}> 
+					<Form>
+					    <Form.Group controlId="formHorizontalEmail">
+							<Col>
+								{
+									options.map( 
+										(item, idx) => (
+											<LumeRow key={"checbox-"+idx}>
+												<LumeOption
+													type="radio"
+													label={item.content}
+													name="formHorizontalRadios"
+													id={item.id}
+													onClick={onClick}
+												/>
+											</LumeRow>
+										)
 									)
-								)
-							}
-							
-						</Col>
-				    </Form.Group>
-			    </Form>
-			</LumeForm>
-		</Row>
-		<Menu previous={previous} next={next} />
-	</PageContainer>
-);
+								}
+								
+							</Col>
+					    </Form.Group>
+				    </Form>
+				</LumeForm>
+			</Row>
+			<Menu previous={previous} next={next} />
+		</PageContainer>
+	)
+};
 
 export default CheckBoxType;
