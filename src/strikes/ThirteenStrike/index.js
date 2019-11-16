@@ -10,35 +10,21 @@ import saga from './saga';
 import reducer from './reducer';
 import { loadAllQuestionsRequest } from './actions';
 
-const title = "Let’s discuss your `Functions` "
-const subtitle = 'Please move the slider to best reflect you'
-const previous = '/10SS-9'
-const next = '/10SS-11'
+const title = "Just a few more questions..."
+const subtitle = 'Use the slider to make this statement true for you'
+const previous = '/10SS-12'
+const next = '/10SS-14'
 const selections = [
 	{
 		id: 1,
-		name: 'Energy',
-		start:'I have a lot of energy',
-		middle:'I struggle with my energy levels sometimes',
-		end:'I struggle with having enough energy to get through the day'
-	},
-	{
-		id: 2,
-		name: 'Immunity',
-		start:'I rarely get sick',
-		middle:'I get sick a normal amount',
-		end:'I get sick too offen'
-	},
-	{
-		id: 3,
-		name: 'Pain',
-		start:'I rarely have aches & pain in my body',
-		middle:'Sometimes I have aches & pains after strenous activity',
-		end:'I often have unexplained aches & pains'
+		name: 'My diet is',
+		start:'Balanced. My meals are full of fruits and vegetables.',
+		middle:'Sometimes my meals are balanced, sometimes they\'re not.',
+		end:'I struggle keeping a balanced diet. My meals often lack fruits or vegetables.'
 	}
 ]
 
-export function TenStrike({loadAllQuestionsRequest}){
+export function ThirteenStrike({loadAllQuestionsRequest}){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
 
 	async function getQuestions(){
@@ -65,4 +51,4 @@ export function TenStrike({loadAllQuestionsRequest}){
 	
 
 
-export default TenStrike;
+export default ThirteenStrike;

@@ -8,6 +8,7 @@ import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 
 import saga from './saga';
 import reducer from './reducer';
+import strikeSaga from '../../store/strike/action'
 import { loadAllQuestionsRequest } from './actions';
 
 const title = "Let’s discuss your `Feels` "
@@ -28,7 +29,7 @@ const questions = [
 	}
 ]
 
-export function FirstStrike({loadAllQuestionsRequest}){
+export function FirstStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
 
 	async function getQuestions(){
@@ -42,16 +43,30 @@ export function FirstStrike({loadAllQuestionsRequest}){
 		getQuestions();
 		// loadAllQuestionsRequest();
 	}, [])
+
+	function onNext() {
+		console.log('onClck', props, loadAllQuestionsRequest)
+		props.getStrike()
+
+	}
+
 	return (
+		<div>
+		<button onClick={onNext}>ONclick</button>
 		<InputType
 		    questions={intakeQuestions} 
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
 		/>
+		</div>
 	);
 }
-	
 
 
-export default FirstStrike;
+
+export default connect(state => ({
+	...state
+}), {
+	...strikeSaga
+})(FirstStrike)

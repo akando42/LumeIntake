@@ -3,32 +3,42 @@ import React, {memo, useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import InputType from '../../components/InputType';
+import SliderType from '../../components/SliderType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 
 import saga from './saga';
 import reducer from './reducer';
 import { loadAllQuestionsRequest } from './actions';
 
-const title = ''
-const subtitle = ''
-const next = '/10SS-5'
-const questions = [
+const title = "Let’s discuss your `Functions` "
+const subtitle = 'Please move the slider to best reflect you'
+const previous = '/10SS-11'
+const next = '/10SS-13'
+const selections = [
 	{
-		'label':'Email',
-		'placeholder':'Please Input Your Email'
+		id: 1,
+		name: 'Energy',
+		start:'I have a lot of energy',
+		middle:'I struggle with my energy levels sometimes',
+		end:'I struggle with having enough energy to get through the day'
 	},
 	{
-		'label': 'Name',
-		'placeholder':'Please Input Your Full Name'
+		id: 2,
+		name: 'Immunity',
+		start:'I rarely get sick',
+		middle:'I get sick a normal amount',
+		end:'I get sick too offen'
 	},
 	{
-		'label':'DOB',
-		'placeholder':'dd/mm/yyyy'
+		id: 3,
+		name: 'Pain',
+		start:'I rarely have aches & pain in my body',
+		middle:'Sometimes I have aches & pains after strenous activity',
+		end:'I often have unexplained aches & pains'
 	}
 ]
 
-export function FirstStrike({loadAllQuestionsRequest}){
+export function TwelveStrike({loadAllQuestionsRequest}){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
 
 	async function getQuestions(){
@@ -43,15 +53,16 @@ export function FirstStrike({loadAllQuestionsRequest}){
 		// loadAllQuestionsRequest();
 	}, [])
 	return (
-		<InputType
-		    questions={intakeQuestions} 
-		    title={title}
-		    subtitle={subtitle} 
-		    next={next}
+		<SliderType 
+			selections={selections}
+			title={title}
+			subtitle={subtitle}
+			next={next}
+			previous={previous}
 		/>
 	);
 }
 	
 
 
-export default FirstStrike;
+export default TwelveStrike;

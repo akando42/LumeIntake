@@ -20,29 +20,6 @@ import {
 	RangeContainer
 } from './styles';
 
-const selections1 = [
-	{
-		'id':1,
-		'name':'STRESS',
-		'start':'I rarely feel stressed',
-		'middle':'I feel stressed sometimes',
-		'end':'I feel stressed all the time'
-	},
-	{
-		'id':2,
-		'name':'MOOD',
-		'start':'I feel happy & positive all the time',
-		'middle':'I feel happy & positive sometimes',
-		'end':'I feel sad & negative most of the time'
-	},
-	{
-		'id':3,
-		'name':'FOCUS',
-		'start':'I’m able to focus & be productive all the time',
-		'middle':'I’m able to focus & be productive sometimes',
-		'end':'I have a hard time staying focused & being productive'
-	}
-]
 
 const SliderType = ({title, subtitle, selections, previous, next}) => (
 	<PageContainer fluid="true">
