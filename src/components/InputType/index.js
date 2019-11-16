@@ -24,20 +24,20 @@ const InputType = ({questions, title, subtitle, previous, next}) => (
 		
 		<Row>
 			<Title md={{span: '6', offset: '3'}} xs={12}>
-				LUME
+				{title}
 			</Title>
 		</Row>
 
 		<Row>
-			<Subtitle> Welcome! Let's confirm it's you... </Subtitle>
+			<Subtitle> {subtitle} </Subtitle>
 		</Row>
 
 		<LumeForm>
 			<Form.Group controlId="formHorizontalEmail">
 				{
 					questions.map(
-						item => (
-							<LumeRow>
+						(item, idx) => (
+							<LumeRow key={"question-"+idx}>
 									<LumeLabel> {item.label} </LumeLabel>
 									<LumeControlBox>
 										<LumeControl type="email" placeholder={item.placeholder} />

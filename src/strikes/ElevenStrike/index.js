@@ -53,6 +53,7 @@ export function ElevenStrike({loadAllQuestionsRequest}){
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
+		    previous={previous}
 		/>
 	);
 }

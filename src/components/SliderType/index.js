@@ -20,7 +20,7 @@ import {
 	RangeContainer
 } from './styles';
 
-const selections = [
+const selections1 = [
 	{
 		'id':1,
 		'name':'STRESS',
@@ -44,15 +44,15 @@ const selections = [
 	}
 ]
 
-const SliderType = ({title, subtitle, previous, next}) => (
+const SliderType = ({title, subtitle, selections, previous, next}) => (
 	<PageContainer fluid="true">
 		<AdminLink to="/admin">Admin</AdminLink>
         
         <Logo>LUME</Logo>
-        <Title> What are your priorities ? </Title>
+        <Title> {title} </Title>
         
         <Subtitle>
-        	Please select any you're interested in addressing or improving.
+        	{subtitle}
        	</Subtitle>
        	<Row>
 	       	<SlideContainer md={{span: '8', offset: '2'}}>

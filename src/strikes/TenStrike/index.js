@@ -16,19 +16,25 @@ const previous = '/10SS-9'
 const next = '/10SS-11'
 const selections = [
 	{
-		'start':'I have a lot of energy',
-		'middle':'I struggle with my energy levels sometimes',
-		'end':'I struggle with having enough energy to get through the day'
+		id: 1,
+		name: 'Energy',
+		start:'I have a lot of energy',
+		middle:'I struggle with my energy levels sometimes',
+		end:'I struggle with having enough energy to get through the day'
 	},
 	{
-		'start':'I rarely get sick',
-		'middle':'I get sick a normal amount',
-		'end':'I get sick too offen'
+		id: 2,
+		name: 'Sick',
+		start:'I rarely get sick',
+		middle:'I get sick a normal amount',
+		end:'I get sick too offen'
 	},
 	{
-		'start':'I rarely have aches & pain in my body',
-		'middle':'Sometimes I have aches & pains after strenous activity',
-		'end':'I often have unexplained aches & pains'
+		id: 3,
+		name: 'Pain',
+		start:'I rarely have aches & pain in my body',
+		middle:'Sometimes I have aches & pains after strenous activity',
+		end:'I often have unexplained aches & pains'
 	}
 ]
 
