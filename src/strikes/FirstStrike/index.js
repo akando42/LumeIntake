@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import InputType from '../../components/InputType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { firstStrike } from '../../tools/api';
 
 import saga from './saga';
 import reducer from './reducer';
-import strikeSaga from '../../store/strike/action'
 import { loadAllQuestionsRequest } from './actions';
 
 const title = "Let’s discuss your `Feels` "
@@ -34,7 +34,7 @@ export function FirstStrike(props){
 
 	async function getQuestions(){
 		const res = await axios.get(
-	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
+	      `${CMS_API_URL}${firstStrike}?token=${CMS_API_TOKEN}`,
 	    );
 	    console.log("Getting Questions from APIs with responses", res.data.questions);
 	    setIntakeQuestions(res.data.questions);
@@ -44,22 +44,22 @@ export function FirstStrike(props){
 		// loadAllQuestionsRequest();
 	}, [])
 
-	function onNext() {
-		console.log('onClck', props, loadAllQuestionsRequest)
-		props.getStrike()
+	function onChange(idx, value) {
+		let updatedQuestion = intakeQuestions[idx];
+		updatedQuestion.value = value;
+		intakeQuestions[idx] = updatedQuestion;
 
+		setIntakeQuestions(intakeQuestions)
 	}
 
 	return (
-		<div>
-		<button onClick={onNext}>ONclick</button>
 		<InputType
 		    questions={intakeQuestions} 
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
+		    updateState={onChange}
 		/>
-		</div>
 	);
 }
 
@@ -67,6 +67,4 @@ export function FirstStrike(props){
 
 export default connect(state => ({
 	...state
-}), {
-	...strikeSaga
-})(FirstStrike)
+}), {})(FirstStrike)
