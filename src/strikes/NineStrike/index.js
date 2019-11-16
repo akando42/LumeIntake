@@ -3,8 +3,8 @@ import SliderType from '../../components/SliderType';
 
 const title = "Let’s discuss your `Looks` "
 const subtitle = 'Please move the slider to best reflect you'
-const previous = '/10SS-18'
-const next = '/'
+const previous = '/10SS-8'
+const next = '/10SS-10'
 const selections = [
 	{
 		'start':'I rarely struggle with skin-health',

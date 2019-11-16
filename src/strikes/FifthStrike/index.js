@@ -21,8 +21,8 @@ import iconMood from './SelectionIcons/iconMood.png';
 
 const title = 'What’s the reason for your visit today?'
 const subtitle = 'Please select all that apply'
-const previous = '/10SS-11'
-const next = '/10SS-7'
+const previous = '/10SS-6'
+const next = '/10SS-8'
 const options = [
 	{ "icon":iconSleep, "name":"SLEEP"},
 	{ "icon":iconMood, "name":"MOOD"},

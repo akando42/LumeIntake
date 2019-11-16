@@ -19,6 +19,8 @@ import FifthStrike from './strikes/FifthStrike';
 import SixStrike from './strikes/SixStrike';
 import SevenStrike from './strikes/SevenStrike';
 import NineStrike from './strikes/NineStrike';
+import TenStrike from './strikes/TenStrike';
+import ElevenStrike from './strikes/ElevenStrike';
 
 import AdminPage from './components/AdminPage';
 
@@ -33,13 +35,14 @@ const App = () => {
           className="switch-wrapper"
         >
           <Route exact path="/" component={FirstStrike} />
-          <Route exact path="/10SS-5" component={SecondStrike} />
-          <Route exact path="/10SS-10" component={ThirdStrike} />
-          <Route exact path="/10SS-11" component={FourthStrike} />
-          <Route exact path="/10SS-6" component={FifthStrike} />
-          <Route exact path="/10SS-7" component={SixStrike} />
-          <Route exact path="/10SS-8" component={SevenStrike} />
+          <Route exact path="/10SS-4" component={SecondStrike} />
+          <Route exact path="/10SS-5" component={ThirdStrike} />
+          <Route exact path="/10SS-6" component={FourthStrike} />
+          <Route exact path="/10SS-7" component={FifthStrike} />
+          <Route exact path="/10SS-8" component={SixStrike} />
           <Route exact path="/10SS-9" component={NineStrike} />
+          <Route exact path="/10SS-10" component={TenStrike} />
+          <Route exact path="/10SS-11" component={ElevenStrike} />
           <Route exact path="/admin" component={AdminPage} />
           
         </AnimatedSwitch>

@@ -4,7 +4,7 @@ import InputType from '../../components/InputType';
 const title = 'Just in case.'
 const subtitle = 'Please provide an emergency contact'
 const previous = '/'
-const next = '/10SS-10'
+const next = '/10SS-5'
 const questions = [
 	{
 		'label':'Contact Name',

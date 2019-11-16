@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { devices } from '../../devices';
-import Logo from '../../assets/Lume_logo.png';
+// import Logo from '../../assets/Lume_logo.png';
 import { Col, Row, Form, Container, Button} from 'react-bootstrap';
 
 export const PageContainer = styled(Container)`
