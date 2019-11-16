@@ -10,8 +10,8 @@ import saga from './saga';
 import reducer from './reducer';
 import { loadAllQuestionsRequest } from './actions';
 
-const title = ''
-const subtitle = ''
+const title = "Let’s discuss your `Feels` "
+const subtitle = 'Please move the slider to best reflect your'
 const next = '/10SS-5'
 const questions = [
 	{

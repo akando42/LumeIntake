@@ -49,7 +49,7 @@ export function ElevenStrike({loadAllQuestionsRequest}){
 	}, [])
 	return (
 		<InputType
-		    questions={intakeQuestions} 
+		    questions={questions} 
 		    title={title}
 		    subtitle={subtitle} 
 		    next={next}
