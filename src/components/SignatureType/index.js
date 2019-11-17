@@ -16,7 +16,6 @@ import {
 
 const SignatureType = ({title, subtitle, previous, next}) => (
 	<PageContainer fluid="true">
-		<AdminLink to="/admin">Admin</AdminLink>
 		<TextLogo> LUME SEVEN</TextLogo>
 		<img src={LumeLogo} />
 		<Title> {title} </Title>

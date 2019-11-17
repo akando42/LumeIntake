@@ -21,3 +21,4 @@ export const sixteenStrike = 'api/singletons/get/sixteen_strike'
 // Tobe Done
 
 	
+export const DashboardData = '/.netlify/functions/users-read-all'

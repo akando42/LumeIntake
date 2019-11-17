@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import db from './server'
 import User_Details from './users-model'
 
-exports.handler = (event, context) => {
+exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
 
   try {
@@ -24,3 +24,4 @@ exports.handler = (event, context) => {
       body: JSON.stringify({msg: err.message})
     }
   }
+}

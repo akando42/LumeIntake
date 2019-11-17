@@ -52,8 +52,6 @@ export function FirstStrike(props){
 	);
 }
 
-
-
 export default connect(state => ({
 	...state
 }), {})(FirstStrike)

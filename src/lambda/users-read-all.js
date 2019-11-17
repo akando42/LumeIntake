@@ -14,9 +14,9 @@ function preflight(callback){
   });
 }
 
-exports.handler = (event, context, callback) => {
-  context.callbackWaitsForEmptyEventLoop = false, 
-  if (event.httpMethod === 'OPTIOMS'){
+exports.handler = async (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false 
+  if (event.httpMethod === 'OPTIONS'){
     console.log("Calling Preflight: ");
     preflight(callback);
   } else {
@@ -30,8 +30,19 @@ exports.handler = (event, context, callback) => {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
-
-        }
+        }, 
+        body: JSON.stringify(response)
+      }
+    } catch (err) {
+      console.log(err) // output to netlify function log
+      return {
+        statusCode: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Request-Headers': '*',
+        },
+        body: JSON.stringify({msg: err.message})
       }
     }
   }
