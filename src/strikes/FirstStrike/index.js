@@ -11,37 +11,27 @@ import saga from './saga';
 import reducer from './reducer';
 import { loadAllQuestionsRequest } from './actions';
 
-const title = "Let’s discuss your `Feels` "
-const subtitle = 'Please move the slider to best reflect your'
-const next = '/10SS-5'
-const questions = [
-	{
-		'label':'Email',
-		'placeholder':'Please Input Your Email'
-	},
-	{
-		'label': 'Name',
-		'placeholder':'Please Input Your Full Name'
-	},
-	{
-		'label':'DOB',
-		'placeholder':'dd/mm/yyyy'
-	}
-]
-
 export function FirstStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-	async function getQuestions(){
+	async function getPageContent(){
 		const res = await axios.get(
 	      `${CMS_API_URL}${firstStrike}?token=${CMS_API_TOKEN}`,
 	    );
-	    console.log("Getting Questions from APIs with responses", res.data.questions);
+	    console.log("Getting Questions from APIs with responses", res.data);
 	    setIntakeQuestions(res.data.questions);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
+
 	useEffect(() => {
-		getQuestions();
-		// loadAllQuestionsRequest();
+		getPageContent();
 	}, [])
 
 	function onChange(idx, value) {
@@ -55,9 +45,8 @@ export function FirstStrike(props){
 	return (
 		<InputType
 		    questions={intakeQuestions} 
-		    title={title}
-		    subtitle={subtitle} 
-		    next={next}
+		    title={pageTitle}
+		    next={nextPage}
 		    updateState={onChange}
 		/>
 	);

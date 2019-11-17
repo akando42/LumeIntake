@@ -40,7 +40,8 @@ const App = () => {
             atActive={{ opacity: 1 }}
             className="switch-wrapper"
           >
-            <Route exact path="/" component={FirstStrike} />
+            <Route exact path="/" component={AdminPage} />
+            <Route exact path="/10SS-1" component={FirstStrike} />
             <Route exact path="/10SS-4" component={SecondStrike} />
             <Route exact path="/10SS-5" component={ThirdStrike} />
             <Route exact path="/10SS-6" component={FourthStrike} />
@@ -49,8 +50,6 @@ const App = () => {
             <Route exact path="/10SS-9" component={NineStrike} />
             <Route exact path="/10SS-10" component={TenStrike} />
             <Route exact path="/10SS-11" component={ElevenStrike} />
-            <Route exact path="/admin" component={AdminPage} />
-            
           </AnimatedSwitch>
         </Router>
       </ConnectedRouter>
