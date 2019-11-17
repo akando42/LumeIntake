@@ -7,35 +7,27 @@ import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 import { secondStrike } from '../../tools/api';
 import InputType from '../../components/InputType';
 
-const title = 'Just in case.'
-const subtitle = 'Please provide an emergency contact'
-const previous = '/'
-const next = '/10SS-5'
-const questions = [
-	{
-		'label':'Contact Name',
-		'placeholder':'Please Input Your Email'
-	},
-	{
-		'label': 'Contact Phone Number',
-		'placeholder':'Please Input Your Full Name'
-	}
-]
-
 export function SecondStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-	async function getQuestions(){
-		// const res = await axios.get(
-	 //      `${CMS_API_URL}${secondStrike}?token=${CMS_API_TOKEN}`,
-	 //    );
-
-	 //    setIntakeQuestions(res.data.questions);
-		setIntakeQuestions(questions);
+	async function getPageContent(){
+		const res = await axios.get(
+	      `${CMS_API_URL}${secondStrike}?token=${CMS_API_TOKEN}`,
+	    );
+	    console.log("Getting Questions from APIs with responses", res.data);
+	    setIntakeQuestions(res.data.questions);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
+
 	useEffect(() => {
-		getQuestions();
-		// loadAllQuestionsRequest();
+		getPageContent();
 	}, [])
 
 	function onChange(idx, value) {
@@ -49,10 +41,10 @@ export function SecondStrike(props){
 	return (
 		<InputType
 		    questions={intakeQuestions} 
-		    title={title}
-		    subtitle={subtitle} 
-		    next={next}
-		    previous={previous}
+		    title={pageTitle}
+		    subtitle={pageSubtitle} 
+		    next={nextPage}
+		    previous={prevPage}
 		    updateState={onChange}
 		/>
 	);
