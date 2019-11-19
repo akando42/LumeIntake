@@ -27,18 +27,25 @@ const options = [
 
 export function ThirdStrike(props){
 	const [intakeOptions, setIntakeOptions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useEffect('');
+	const [nextPage, setNextPage] = useEffect('');
 
-	async function getOptions(){
-		// const res = await axios.get(
-	 //      `${CMS_API_URL}${thirdStrike}?token=${CMS_API_TOKEN}`,
-	 //    );
-
-	 //    setIntakeOptions(res.data.questions);
-		setIntakeOptions(options);
+	async function getPageContent(){
+		const res = await axios.get(
+	      `${CMS_API_URL}${thirdStrike}?token=${CMS_API_TOKEN}`,
+	    );
+		console.log("Third Strike Data", res.data);
+	    setIntakeOptions(res.data.options);
+		setPageTitle(res.data.title);
+		setPageSubtitle(res.data.subtitle);
+		setPrevPage(res.data.previous);
+		setNextPage(res.data.next);
 	}
 
 	useEffect(() => {
-		getOptions();
+		getPageContent()
 		// loadAllQuestionsRequest();
 	}, [])
 
@@ -57,11 +64,11 @@ export function ThirdStrike(props){
 
 	return (
 		<CheckBoxType
-		    options={options} 
-		    title={title}
-		    subtitle={subtitle} 
-		    next={next}
-		    previous={previous}
+		    options={intakeOptions} 
+		    title={pageTitle}
+		    subtitle={pageSubtitle} 
+		    next={nextPage}
+		    previous={prevPage}
 		    updateState={onChange}
 		/>
 	);

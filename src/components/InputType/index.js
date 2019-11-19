@@ -50,7 +50,8 @@ const InputType = ({questions, title, subtitle, previous, next, updateState}) =>
 												type="text"
 												placeholder={item.placeholder}
 												value={item.value}
-												onChange={onChange} />
+												onChange={onChange} 
+											/>
 										</LumeControlBox>
 								</LumeRow>
 							)

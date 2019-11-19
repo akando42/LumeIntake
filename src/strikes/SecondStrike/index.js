@@ -19,7 +19,7 @@ export function SecondStrike(props){
 	      `${CMS_API_URL}${secondStrike}?token=${CMS_API_TOKEN}`,
 	    );
 	    console.log("Getting Questions from APIs with responses", res.data);
-	    setIntakeQuestions(res.data.questions);
+	    setIntakeQuestions(res.data.Questions);
 	    setPageTitle(res.data.Title);
 	    setPageSubtitle(res.data.Subtitle);
 	    setPrevPage(res.data.Previous);
