@@ -2,7 +2,7 @@ import React from 'react';
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const dataProvider = jsonServerProvider('http://localhost:3000/.netlify/functions/users-read-all');
 
 const AdminPage = () => (
 	<Admin dataProvider={dataProvider}>
