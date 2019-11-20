@@ -21,17 +21,14 @@ exports.handler = async (event, context, callback) => {
     preflight(callback);
   } else {
     try {
-      const users_detail = await User_Details.find(), 
-            response = {
-              msg: "Users successfully found",
-              data: users_detail
-            }
+      const users_detail = await User_Details.find()
       return {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
+          'X-Total-Count':users_detail.length
         }, 
-        body: JSON.stringify(response)
+        body: JSON.stringify(users_detail)
       }
     } catch (err) {
       console.log(err) // output to netlify function log

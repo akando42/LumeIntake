@@ -1,8 +1,11 @@
 // userModel.js
 import mongoose from 'mongoose'
-// Set Product Schema
+
+
+// Set User Detail Schema
 const schema = new mongoose.Schema({
         _id: mongoose.Schema.Types.ObjectId,
+        id:mongoose.Schema.Types.ObjectId,
         name: {
           type: String,
           required: [false, 'Name field is required'],
@@ -44,7 +47,7 @@ const schema = new mongoose.Schema({
           type: String, 
           required: [false, 'Level of Focus']
         }
-      }),
+      }, { _id: false }),
 
       User_Details = mongoose.model('user_details', schema)
 

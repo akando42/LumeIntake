@@ -18,14 +18,14 @@ exports.handler = (event, context, callback) => {
   if (data.pass = "lume_staffs"){
   	return callback(null, {
   		statusCode: 200, 
-  		body:L JSON.stringify({
+  		body: JSON.stringify({
   		 	token: '13-22-6-212',
   		 	message: 'Welcome Lume Staffs Members'
   		})
   	})
   } else {
   	return callback(null, {
-  		statusCode: 402
+  		statusCode: 403,
   		body: JSON.stringify({
   			message: 'Wrong password, please try again'
   		})

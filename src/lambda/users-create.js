@@ -30,6 +30,7 @@ const instance = axios.create({
 
     const user_detail = {
       _id: id, 
+      id: id,
       name: name, 
       email: email, 
       dob: dob,
