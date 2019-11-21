@@ -45,7 +45,7 @@ const App = () => {
             atActive={{ opacity: 1 }}
             className="switch-wrapper"
           >
-            <Route exact path="/" component={AdminPage} />
+            <Route exact path="/" component={AdminPage} history={history} />
             <Route exact path="/10SS-1" component={FirstStrike} />
             <Route exact path="/10SS-5" component={SecondStrike} />
             <Route exact path="/10SS-10" component={ThirdStrike} />
