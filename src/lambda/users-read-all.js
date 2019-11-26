@@ -17,7 +17,6 @@ function preflight(callback){
 exports.handler = async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false 
   if (event.httpMethod === 'OPTIONS'){
-    console.log("Calling Preflight: ");
     preflight(callback);
   } else {
     try {
@@ -26,12 +25,14 @@ exports.handler = async (event, context, callback) => {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Request-Headers': '*',
           'X-Total-Count':users_detail.length
         }, 
         body: JSON.stringify(users_detail)
       }
     } catch (err) {
-      console.log(err) // output to netlify function log
+      console.log(err)
       return {
         statusCode: 500,
         headers: {

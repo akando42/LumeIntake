@@ -45,25 +45,6 @@ const AdminPage = ({dataProvider}) => {
 		console.log("User List",res.data);
 	}	
 
-	async function downloadUsers(){
-		// console.log("Downloading Users");
-		// const fields = [
-		// 	'id',
-		// 	'name',
-		// 	'email',
-		// 	'emergencyContact',
-		// 	'reason_for_visit'
-		// ];
-		// const opts = {fields};
-		// const csv = parse(users, opts);
-		// console.log(csv);
-
-		// jsonexport(users,function(err, csv){
-	 //    	if(err) return console.log(err);
-	 //    	console.log(csv);
-		// });
-	}
-
 	useEffect(() => {
 		fetchUsers();
 	}, [])

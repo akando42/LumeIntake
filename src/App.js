@@ -10,7 +10,6 @@ import {
   Link, 
   Redirect, 
   withRouter, 
-  browserHistory,
   useLocation,
   useParams
 } from "react-router-dom";
