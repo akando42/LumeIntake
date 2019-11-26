@@ -23,16 +23,16 @@ exports.handler = async (event, context, callback) => {
     try {
       const request_data = JSON.parse(event.body);
       const user_detail = await User_Details.findOne({email: request_data.email})
-      return {
+      callback(null, {
         statusCode: 200,
         headers: {
           'Content-Type':'application/json',
         },
         body: JSON.stringify(user_detail)
-      }
+      })
     } catch (err){
       console.log(err)
-      return {
+      callback(null, {
         statusCode: 500, 
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ exports.handler = async (event, context, callback) => {
           'Access-Control-Request-Headers': '*',
         },
         body: JSON.stringify({msg: err.message})
-      }
+      })
     }
   }
 }
