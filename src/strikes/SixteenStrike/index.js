@@ -12,8 +12,8 @@ import { loadAllQuestionsRequest } from './actions';
 
 const title = "Just a few more questions..."
 const subtitle = 'Use the slider to make this statement true for you'
-const previous = '/10SS-14'
-const next = '/10SS-16'
+const previous = '/10SS-18'
+const next = '/'
 const selections = [
 	{
 		id: 1,

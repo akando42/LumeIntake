@@ -6,24 +6,24 @@ import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 import { thirdStrike } from '../../tools/api';
 import CheckBoxType from '../../components/CheckBoxType';
 
-const title = 'What’s the reason for your visit today?'
-const subtitle = 'Please select all that apply'
-const previous = '/10SS-4'
-const next = '/10SS-6'
-const options = [
-	{
-		id: 1,
-	 	content:'JUST CHECKING IT OUT'
-	},
-	{
-		id: 2,
-	 	content:'OVERALL WELLNESS',
-	},
-	{
-		id: 3,
-	 	content:'TO ADDRESS A SPECIFIC CONCERN'
-	}
-]
+// const title = 'What’s the reason for your visit today?'
+// const subtitle = 'Please select all that apply'
+// const previous = '/10SS-4'
+// const next = '/10SS-6'
+// const options = [
+// 	{
+// 		id: 1,
+// 	 	content:'JUST CHECKING IT OUT'
+// 	},
+// 	{
+// 		id: 2,
+// 	 	content:'OVERALL WELLNESS',
+// 	},
+// 	{
+// 		id: 3,
+// 	 	content:'TO ADDRESS A SPECIFIC CONCERN'
+// 	}
+// ]
 
 export function ThirdStrike(props){
 	const [intakeOptions, setIntakeOptions] = useState([]);
@@ -46,10 +46,10 @@ export function ThirdStrike(props){
 
 	useEffect(() => {
 		getPageContent()
-		// loadAllQuestionsRequest();
 	}, [])
 
 	function onChange(idx) {
+		console.log("INTAKE OPTIONS", intakeOptions);
 		let options = Object.assign([], intakeOptions);
 		for (let i = 0; i < options.length; i++) {
 			if (options[i].id === idx) {
@@ -59,7 +59,7 @@ export function ThirdStrike(props){
 			}
 		}
 
-		setIntakeOptions(options)
+		setIntakeOptions(intakeOptions)
 	}
 
 	return (

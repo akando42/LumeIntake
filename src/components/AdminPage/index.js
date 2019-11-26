@@ -92,7 +92,7 @@ const AdminPage = ({dataProvider}) => {
 						</ExportButton>
 					</Col>
 					<Col md={{span: '2'}}>
-						<Link to="/10SS-1">
+						<Link to="/10SS-01">
 							<ActivateButton>
 								Activate Quiz
 							</ActivateButton>

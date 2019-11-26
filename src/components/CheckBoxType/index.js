@@ -16,16 +16,13 @@ import {
 	AdminLink 
 } from './styles'
 
-const CheckBoxType = ({title, subtitle, options, previous, next, updateState}) => {
-	function onClick(e) {
-		updateState(e.target.id)
-	}
+const CheckBoxType = ({title, subtitle, options, previous, next}) => {
+	// function onClick(e) {
+	// 	updateState(e.target.id)
+	// }
 
 	return (
 		<PageContainer fluid="true">
-			<Row>
-				<AdminLink to="/admin">Admin</AdminLink>
-			</Row>
 			<Row>
 				<Title md={{span: '6', offset: '3'}} xs={12}>
 					{title}
@@ -40,7 +37,7 @@ const CheckBoxType = ({title, subtitle, options, previous, next, updateState}) =
 				<LumeForm md={{span: '8', offset: '2'}} sm={{span: '10', offset: '1'}}> 
 					<Form>
 					    <Form.Group controlId="formHorizontalEmail">
-							<Col>
+							{/*<Col>
 								{
 									options.map( 
 										(item, idx) => (
@@ -50,14 +47,14 @@ const CheckBoxType = ({title, subtitle, options, previous, next, updateState}) =
 													label={item.content}
 													name="formHorizontalRadios"
 													id={item.id}
-													onClick={onClick}
+													// onClick={onClick}
 												/>
 											</LumeRow>
 										)
 									)
 								}
-								
 							</Col>
+							*/}
 					    </Form.Group>
 				    </Form>
 				</LumeForm>

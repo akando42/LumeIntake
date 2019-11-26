@@ -46,14 +46,14 @@ const App = () => {
             className="switch-wrapper"
           >
             <Route exact path="/" component={AdminPage} />
-            <Route exact path="/10SS-1" component={FirstStrike} />
-            <Route exact path="/10SS-5" component={SecondStrike} />
+            <Route exact path="/10SS-01" component={FirstStrike} />
+            <Route exact path="/10SS-05" component={SecondStrike} />
             <Route exact path="/10SS-10" component={ThirdStrike} />
             <Route exact path="/10SS-11" component={FourthStrike} />
-            <Route exact path="/10SS-6" component={FifthStrike} />
-            <Route exact path="/10SS-7" component={SixStrike} />
-            <Route exact path="/10SS-8" component={SevenStrike} />
-            <Route exact path="/10SS-9" component={EightStrike} />
+            <Route exact path="/10SS-06" component={FifthStrike} />
+            <Route exact path="/10SS-07" component={SixStrike} />
+            <Route exact path="/10SS-08" component={SevenStrike} />
+            <Route exact path="/10SS-09" component={EightStrike} />
             <Route exact path="/10SS-12" component={NineStrike} />
             <Route exact path="/10SS-13" component={TenStrike} />
             <Route exact path="/10SS-14" component={ElevenStrike} />

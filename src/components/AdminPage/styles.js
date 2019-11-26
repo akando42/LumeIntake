@@ -71,7 +71,7 @@ export const ActivateButton = styled(Button)`
 	}
 `
 export const DataTable = styled(Table)`
-  background-color: white;
+    background-color: white;
 `
 export const DataHeader = styled.thead``
 export const DataHead = styled.th``
@@ -81,4 +81,9 @@ export const DataCell = styled.td``
 export const ClientProfileModal = styled(Modal)`
 	width: 100%;
 	border-radius: 0px !important;	
+	font-family: Sailec-Bold;
+	font-family: 28px;
 `
+
+export const ClientLabel = styled(Col)``
+export const ClientData = styled(Col)``
