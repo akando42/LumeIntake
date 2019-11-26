@@ -33,3 +33,20 @@ $ yarn build
 17. Addtional Info about Medical History ? - Text Field
 18. Signed Date - Date
 
+### Proxy Server
+
+```
+const proxy = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  app.use(
+    '/.netlify/functions',
+    proxy({
+      target: 'http://localhost:9000',
+      changeOrigin: true,
+    })
+  );
+};
+
+```
+

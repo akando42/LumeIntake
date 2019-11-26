@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router';
 import { AnimatedSwitch } from 'react-router-transition';
 
@@ -8,11 +7,14 @@ import {
   Switch,
   BrowserRouter as Router,
   Route,
+  Link, 
+  Redirect, 
+  withRouter, 
+  browserHistory,
   useLocation,
   useParams
 } from "react-router-dom";
 
-import { store, history } from './store';
 
 import AdminPage from './components/AdminPage';
 
@@ -34,10 +36,7 @@ import FifteenStrike from './strikes/FifteenStrike';
 import SixteenStrike from './strikes/SixteenStrike';
 
 const App = () => {
-  // let location = useLocation();
   return (
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
         <Router>
           <AnimatedSwitch
             atEnter={{ opacity: 0 }}
@@ -64,8 +63,6 @@ const App = () => {
             <Route exact path="/10SS-19" component={SixteenStrike} />
           </AnimatedSwitch>
         </Router>
-      </ConnectedRouter>
-    </Provider>
   )
 };
 
