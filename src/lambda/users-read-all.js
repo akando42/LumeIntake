@@ -21,7 +21,7 @@ exports.handler = async (event, context, callback) => {
   } else {
     try {
       const users_detail = await User_Details.find()
-      return {
+      callback(null, {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
@@ -30,10 +30,10 @@ exports.handler = async (event, context, callback) => {
           'X-Total-Count':users_detail.length
         }, 
         body: JSON.stringify(users_detail)
-      }
+      })
     } catch (err) {
       console.log(err)
-      return {
+      callback(null, {
         statusCode: 500,
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ exports.handler = async (event, context, callback) => {
           'Access-Control-Request-Headers': '*',
         },
         body: JSON.stringify({msg: err.message})
-      }
+      })
     }
   }
 }
