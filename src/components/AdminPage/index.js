@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Col, Row, FormControl, Button} from 'react-bootstrap';
+import {Col, Row, FormControl, Button, Modal} from 'react-bootstrap';
 import Logo from '../../assets/LUME_logo.png';
 import axios from 'axios';
 import { CSVLink, CSVDownload } from 'react-csv';
@@ -19,18 +19,24 @@ import {
 	DataHeader, 
 	DataHead, 
 	DataRow, 
-	DataCell
+	DataCell,
+	ClientProfileModal
 } from './styles';
 
 const AdminPage = ({dataProvider}) => {
 	const [users, setUsers] = useState([])
 	const [userProfile, setUserProfile]=useState({})
 
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	async function fetchUserProfile(email){
 		const data = {"email": email};
 		const res = await axios.post(`${LAMBDA_API}/users-read-one`,data);
 		setUserProfile(res.data);
 		console.log("Getting Data for User Profile", res.data);
+		setShow(true)
 	}
 
 	async function fetchUsers(){
@@ -125,6 +131,65 @@ const AdminPage = ({dataProvider}) => {
 					</tbody>
 				</DataTable>
 			</ContentContainer>
+			<ClientProfileModal size="xl" show={show} onHide={handleClose}>
+				<Modal.Header closeButton>
+					<Row>
+						<Col md={{span: "auto"}}>
+							{userProfile.name}
+						</Col>
+						<Col md={{span: "auto"}}>
+							{userProfile.email}
+						</Col>
+					</Row>
+				</Modal.Header>
+				<Modal.Body>
+					<Row>
+						<Col>DOB</Col>
+						<Col>{userProfile.dob}</Col>
+					</Row>
+					<Row>
+						<Col>EMERGENCY CONTACT</Col>
+						<Col>{userProfile.emergencyContact}</Col>
+					</Row>
+					<Row>
+						<Col>REASON FOR VISIT</Col>
+						<Col>{userProfile.reason_for_visit}</Col>
+					</Row>
+					<Row>
+						<Col>LIFESTYLE</Col> 
+						<Col>{userProfile.life_style}</Col>
+					</Row>
+					<Row>
+						<Col>PRIORITIES</Col>
+						<Col>{userProfile.priorities}</Col>
+					</Row>
+					<Row>
+						<Col>FEELS:STRESS</Col>
+						<Col>{userProfile.feels_focus}</Col>
+					</Row>
+					<Row>
+						<Col>FEELS:MOOD</Col>
+						<Col>{userProfile.feels_mood}</Col>
+					</Row>
+					<Row>
+						<Col>FEELS:FOCUS</Col>
+						<Col>{userProfile.feels_stress}</Col>
+					</Row>
+
+					<Row>
+						<Col>NOTES</Col>
+						<Col>Some Node Here</Col>
+					</Row>
+				</Modal.Body>
+				<Modal.Footer>
+				<Button variant="secondary" onClick={handleClose}>
+					Close
+				</Button>
+				<Button variant="primary" onClick={handleClose}>
+					Save Changes
+				</Button>
+				</Modal.Footer>
+			</ClientProfileModal>
 		</PageContainer>
 	)
 

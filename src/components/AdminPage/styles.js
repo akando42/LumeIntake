@@ -8,7 +8,8 @@ import {
 	Row, 
 	FormControl, 
 	Container, 
-	Button
+	Button, 
+	Modal
 } from 'react-bootstrap';
 
 export const PageContainer = styled.div`
@@ -76,3 +77,8 @@ export const DataHeader = styled.thead``
 export const DataHead = styled.th``
 export const DataRow = styled.tr``
 export const DataCell = styled.td``
+
+export const ClientProfileModal = styled(Modal)`
+	width: 100%;
+	border-radius: 0px !important;	
+`
