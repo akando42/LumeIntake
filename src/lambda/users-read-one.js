@@ -31,7 +31,7 @@ exports.handler = async (event, context, callback) => {
         body: JSON.stringify(user_detail)
       })
     } catch (err){
-      console.log(err)
+      console.log(err);
       callback(null, {
         statusCode: 500, 
         headers: {
