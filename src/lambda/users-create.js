@@ -13,7 +13,6 @@ const instance = axios.create({
 })
 
   exports.handler = async (event, context, callback) => {
-  // "event" has informatiom about the path, body, headers etc of the request
   const request_data = JSON.parse(event.body);
   try {
     const id = mongoose.Types.ObjectId();

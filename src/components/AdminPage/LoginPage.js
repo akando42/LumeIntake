@@ -10,7 +10,7 @@ const LoginPage = ({theme}) => {
 	const submit = (e) => {
 		console.log("Submmit form info");
 	}
-
+	
 	return (
 		<ThemeProvider theme={theme}>
             <form onSubmit={submit}>

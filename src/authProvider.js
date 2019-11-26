@@ -20,6 +20,27 @@ const authProvider = () => ({
         localStorage.removeItem('token');
         return Promise.resolve();
     },
+    checkError: (error) => {
+        const status = error.status;
+        if (status === 401 || status === 403){
+            localStorage.removeItem('token');
+            return Promise.reject();
+        }
+        return Promise.resolve()
+    },
+    checkAuth: () => {
+        try {
+            localStorage.getItem('token');
+            return Promise.resolve()
+        } catch {
+            return Promise.reject({
+                redirectTo: '/login'
+            })
+        } 
+    },
+    getPermissions: () => {
+
+    },
 })
 
 export default authProvider;
