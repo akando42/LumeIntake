@@ -21,7 +21,7 @@ exports.handler = async (event, context, callback) => {
   } else {
     try {
       const users_detail = await User_Details.find()
-      callback(null, {
+      return callback(null, {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
@@ -33,7 +33,7 @@ exports.handler = async (event, context, callback) => {
       })
     } catch (err) {
       console.log(err)
-      callback(null, {
+      return callback(null, {
         statusCode: 500,
         headers: {
           'Content-Type': 'application/json',
