@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Col, Row, FormControl, Button, Modal} from 'react-bootstrap';
+import {Col, Row, FormControl, Button, Modal, Form} from 'react-bootstrap';
 import Logo from '../../assets/LUME_logo.png';
 import axios from 'axios';
 import { CSVLink, CSVDownload } from 'react-csv';
@@ -20,7 +20,9 @@ import {
 	DataHead, 
 	DataRow, 
 	DataCell,
-	ClientProfileModal
+	ClientProfileModal,
+	ClientLabel, 
+	ClientData
 } from './styles';
 
 const AdminPage = ({dataProvider}) => {
@@ -125,41 +127,43 @@ const AdminPage = ({dataProvider}) => {
 				</Modal.Header>
 				<Modal.Body>
 					<Row>
-						<Col>DOB</Col>
-						<Col>{userProfile.dob}</Col>
+						<ClientLabel md={6}>DOB</ClientLabel>
+						<ClientData md={6}>{userProfile.dob}</ClientData>
 					</Row>
 					<Row>
-						<Col>EMERGENCY CONTACT</Col>
-						<Col>{userProfile.emergencyContact}</Col>
+						<ClientLabel>EMERGENCY CONTACT</ClientLabel>
+						<ClientData>{userProfile.emergencyContact}</ClientData>
 					</Row>
 					<Row>
-						<Col>REASON FOR VISIT</Col>
-						<Col>{userProfile.reason_for_visit}</Col>
+						<ClientLabel>REASON FOR VISIT</ClientLabel>
+						<ClientData>{userProfile.reason_for_visit}</ClientData>
 					</Row>
 					<Row>
-						<Col>LIFESTYLE</Col> 
-						<Col>{userProfile.life_style}</Col>
+						<ClientLabel>LIFESTYLE</ClientLabel> 
+						<ClientData>{userProfile.life_style}</ClientData>
 					</Row>
 					<Row>
-						<Col>PRIORITIES</Col>
-						<Col>{userProfile.priorities}</Col>
+						<ClientLabel>PRIORITIES</ClientLabel>
+						<ClientData>{userProfile.priorities}</ClientData>
 					</Row>
 					<Row>
-						<Col>FEELS:STRESS</Col>
-						<Col>{userProfile.feels_focus}</Col>
+						<ClientLabel>FEELS:STRESS</ClientLabel>
+						<ClientData>{userProfile.feels_focus}</ClientData>
 					</Row>
 					<Row>
-						<Col>FEELS:MOOD</Col>
-						<Col>{userProfile.feels_mood}</Col>
+						<ClientLabel>FEELS:MOOD</ClientLabel>
+						<ClientData>{userProfile.feels_mood}</ClientData>
 					</Row>
 					<Row>
-						<Col>FEELS:FOCUS</Col>
-						<Col>{userProfile.feels_stress}</Col>
+						<ClientLabel>FEELS:FOCUS</ClientLabel>
+						<ClientData>{userProfile.feels_stress}</ClientData>
 					</Row>
 
 					<Row>
-						<Col>NOTES</Col>
-						<Col>Some Node Here</Col>
+						<ClientLabel>NOTES</ClientLabel>
+						<ClientData>
+							<Form.Control as="textarea" rows="3" />
+						</ClientData>
 					</Row>
 				</Modal.Body>
 				<Modal.Footer>

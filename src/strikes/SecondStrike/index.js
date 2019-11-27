@@ -50,6 +50,4 @@ export function SecondStrike(props){
 	);
 }
 
-export default connect(state => ({
-	...state
-}), {})(SecondStrike)
+export default SecondStrike

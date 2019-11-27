@@ -49,17 +49,7 @@ export function ThirdStrike(props){
 	}, [])
 
 	function onChange(idx) {
-		console.log("INTAKE OPTIONS", intakeOptions);
-		let options = Object.assign([], intakeOptions);
-		for (let i = 0; i < options.length; i++) {
-			if (options[i].id === idx) {
-				options[i].value = true;
-			} else {
-				options[i].value = false;
-			}
-		}
-
-		setIntakeOptions(intakeOptions)
+		console.log(idx);
 	}
 
 	return (
@@ -74,6 +64,4 @@ export function ThirdStrike(props){
 	);
 }
 
-export default connect(state => ({
-	...state
-}), {})(ThirdStrike)
+export default ThirdStrike

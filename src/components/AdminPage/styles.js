@@ -85,5 +85,14 @@ export const ClientProfileModal = styled(Modal)`
 	font-family: 28px;
 `
 
-export const ClientLabel = styled(Col)``
-export const ClientData = styled(Col)``
+export const ClientLabel = styled(Col)`
+	color: #35454F;
+	font-size: 20px;
+	text-align: right;
+	font-family: Sailec-Bold;
+`
+export const ClientData = styled(Col)`
+    color: #35454F;
+    opacity: 0.5;
+    font-family: Sailec-Bold;
+`
