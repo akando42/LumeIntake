@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/.netlify/functions',
     proxy({
-      target: 'https://lumechicago.com',
+      target: 'http://localhost:9000',
       changeOrigin: true,
     })
   );

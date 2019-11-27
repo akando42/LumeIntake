@@ -127,40 +127,40 @@ const AdminPage = ({dataProvider}) => {
 				</Modal.Header>
 				<Modal.Body>
 					<Row>
-						<ClientLabel md={6}>DOB</ClientLabel>
-						<ClientData md={6}>{userProfile.dob}</ClientData>
+						<ClientLabel md={4}>DOB</ClientLabel>
+						<ClientData md={8}>{userProfile.dob}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>EMERGENCY CONTACT</ClientLabel>
+						<ClientLabel md={4}>EMERGENCY CONTACT</ClientLabel>
 						<ClientData>{userProfile.emergencyContact}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>REASON FOR VISIT</ClientLabel>
+						<ClientLabel md={4}>REASON FOR VISIT</ClientLabel>
 						<ClientData>{userProfile.reason_for_visit}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>LIFESTYLE</ClientLabel> 
+						<ClientLabel md={4}>LIFESTYLE</ClientLabel> 
 						<ClientData>{userProfile.life_style}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>PRIORITIES</ClientLabel>
+						<ClientLabel md={4}>PRIORITIES</ClientLabel>
 						<ClientData>{userProfile.priorities}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>FEELS:STRESS</ClientLabel>
+						<ClientLabel md={4}>FEELS:STRESS</ClientLabel>
 						<ClientData>{userProfile.feels_focus}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>FEELS:MOOD</ClientLabel>
+						<ClientLabel md={4}>FEELS:MOOD</ClientLabel>
 						<ClientData>{userProfile.feels_mood}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>FEELS:FOCUS</ClientLabel>
+						<ClientLabel md={4}>FEELS:FOCUS</ClientLabel>
 						<ClientData>{userProfile.feels_stress}</ClientData>
 					</Row>
 
 					<Row>
-						<ClientLabel>NOTES</ClientLabel>
+						<ClientLabel md={4}>NOTES</ClientLabel>
 						<ClientData>
 							<Form.Control as="textarea" rows="3" />
 						</ClientData>
