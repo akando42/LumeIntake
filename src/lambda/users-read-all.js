@@ -14,7 +14,7 @@ function preflight(callback){
   });
 }
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false 
   if (event.httpMethod === 'OPTIONS'){
     preflight(callback);
@@ -32,7 +32,6 @@ exports.handler = (event, context, callback) => {
         body: JSON.stringify(users_detail)
       })
     } catch (err) {
-      console.log(err)
       return callback(null, {
         statusCode: 500,
         headers: {

@@ -9,7 +9,7 @@ const instance = axios.create({
   }
 })
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
   // "event" has informatiom about the path, body, headers etc of the request
   console.log('event', event)
 
