@@ -14,7 +14,7 @@ function preflight(callback){
   });
 }
 
-exports.handler = async (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false 
   if (event.httpMethod === 'OPTIONS'){
     preflight(callback);
