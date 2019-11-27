@@ -1,6 +1,6 @@
 # netlify.toml
 [build]
-  command = ""
+  command = "yarn build"
   functions = "./lambda"
   publish = "./build"
 
