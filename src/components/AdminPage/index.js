@@ -38,13 +38,13 @@ const AdminPage = ({dataProvider}) => {
 		const res = await axios.post(`${LAMBDA_API}/users-read-one`,data);
 		setUserProfile(res.data);
 		console.log("Getting Data for User Profile", res.data);
-		setShow(true)
+		setShow(true);
 	}
 
 	async function fetchUsers(){
-		const res = await axios.get(`${LAMBDA_API}/users-read-all`);
+		const res = await axios.get(`${LAMBDA_API}/health-test`);
+		console.log("User List",res);
 		setUsers(res.data);
-		console.log("User List",res.data);
 	}	
 
 	useEffect(() => {
