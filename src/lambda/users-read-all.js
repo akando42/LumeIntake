@@ -25,9 +25,7 @@ exports.handler = async (event, context, callback) => {
         statusCode: 200, 
         headers: {
           'Content-Type':'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Request-Headers': '*',
-          'X-Total-Count':users_detail.length
+          'X-Total-Count':users_detail.length,
         }, 
         body: JSON.stringify(users_detail)
       })
@@ -36,8 +34,6 @@ exports.handler = async (event, context, callback) => {
         statusCode: 500,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Request-Headers': '*',
         },
         body: JSON.stringify({msg: err.message})
       })
