@@ -42,7 +42,7 @@ const AdminPage = ({dataProvider}) => {
 	}
 
 	async function fetchUsers(){
-		const res = await axios.get(`${LAMBDA_API}/users-read-all`);
+		const res = await axios.get(`${LAMBDA_API}/health-test`);
 		setUsers(res.data);
 		console.log("User List",res.data);
 	}	

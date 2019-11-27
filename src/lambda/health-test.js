@@ -1,0 +1,37 @@
+const axios = require('axios')
+
+const instance = axios.create({
+  baseURL: '',
+  timeout: 1000,
+  auth: {
+    username: '',
+  	password: ''
+  }
+})
+
+exports.handler = (event, context, callback) => {
+  // "event" has informatiom about the path, body, headers etc of the request
+  console.log('event', event)
+
+  // "context" has information about the lambda environment and user details
+  console.log('context', context)
+  
+  // The "callback" ends the execution of the function and returns a reponse back to the caller
+  return callback(null, {
+    statusCode: 200,
+    body: JSON.stringify(
+    	[
+	      	{
+	      		"name":"Hoang V Do", 
+	      		"email": "hoangdov@gmail.com", 
+	      		"emergencyContact":"6822394930"
+	      	}, 
+	      	{
+	      		"name":"Troy Do", 
+	      		"email": "troydo42@gmail.com",
+	      		"emergencyContact":"6822394930"
+	      	}
+      	]
+    )
+  })
+}
