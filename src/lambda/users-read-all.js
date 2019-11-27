@@ -10,7 +10,9 @@ exports.handler = async (event, context, callback) => {
         'Content-Type':'application/json',
         'X-Total-Count':users_detail.length,
       }, 
-      body: JSON.stringify(users_detail)
+      body: JSON.stringify({
+        data: users_detail
+      })
     })
   } catch (err) {
     return callback(null, {
