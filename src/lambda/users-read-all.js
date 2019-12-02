@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
     try {
       await User_Details.find({},function(err, data){
         if(err){
-          return {
+          callback(null, {
             statusCode: 500,
             headers: {
               'Content-Type': 'application/json',
@@ -30,9 +30,9 @@ exports.handler = async (event, context, callback) => {
               'Access-Control-Request-Headers': '*',
             },
             body: JSON.stringify({msg: err.message})
-          }
+          })
         }
-        return {
+        callback(null, {
           statusCode: 200, 
           headers: {
             'Content-Type':'application/json',
@@ -41,10 +41,10 @@ exports.handler = async (event, context, callback) => {
             'X-Total-Count':data.length
           }, 
           body: JSON.stringify(data)
-        }
+        })
       })
     } catch (err) {
-      return {
+      callback(null, {
         statusCode: 500,
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ exports.handler = async (event, context, callback) => {
           'Access-Control-Request-Headers': '*',
         },
         body: JSON.stringify({msg: err.message})
-      }
+      })
     }
   }
 }
