@@ -51,7 +51,7 @@ exports.handler = async (event, context, callback) => {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Request-Headers': '*',
         },
-        body: JSON.stringify({msg: err.message})
+        body: JSON.stringify({msg: err})
       })
     }
   }
