@@ -2,7 +2,7 @@ import db from './server'
 import User_Details from './users-model'
 
 function preflight(callback){
-  callback(null, {
+  return callback(null, {
     statusCode: 204, 
     headers: {
       'Content-Type':'application/json',
@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
     try {
       await User_Details.find({},function(err, data){
         if(err){
-          callback(null, {
+          return callback(null, {
             statusCode: 500,
             headers: {
               'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ exports.handler = async (event, context, callback) => {
             body: JSON.stringify({msg: err.message})
           })
         }
-        callback(null, {
+        return callback(null, {
           statusCode: 200, 
           headers: {
             'Content-Type':'application/json',
@@ -44,7 +44,7 @@ exports.handler = async (event, context, callback) => {
         })
       })
     } catch (err) {
-      callback(null, {
+      return callback(null, {
         statusCode: 500,
         headers: {
           'Content-Type': 'application/json',
