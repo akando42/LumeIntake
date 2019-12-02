@@ -3,16 +3,18 @@ import User_Details from './users-model'
 
 exports.handler = async (event, context, callback) => {
   try {
-    const users_detail = await User_Details.find()
+    var users_detail = await User_Details.find()
+    var response = {
+      msg: "These are users data",
+      data: users_detail
+    }
     return callback(null, {
       statusCode: 200, 
       headers: {
         'Content-Type':'application/json',
         'X-Total-Count':users_detail.length,
       }, 
-      body: JSON.stringify({
-        data: users_detail
-      })
+      body: JSON.stringify(response)
     })
   } catch (err) {
     return callback(null, {
