@@ -16,60 +16,72 @@ export const PageContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: #CBCBCB;
+  padding: 0px !important;
+  margin: 0px !important;
 ` 
-
-export const ExportButton = styled(CSVLink)`
-	border-radius: 2px !important;
-	border: #707070 1px solid;
-	background-color: #35454F;
-	color: white;
-	&:hover {
-		background-color: white;
-		color: #35454F !important;
-	}
-`
-
 export const ContentContainer = styled(Container)`
-
 `
 
 export const TopMenu = styled(Row)`
-  height: 10vh;
   width: 100vw;
+  padding: 45px 0px;
 `
 
 export const LumeLogo = styled.img`
-	width: 8vw;
-	height: auto;
+  width: 160px;
+  height: auto;
 `
 
 export const SearchPanel = styled(Row)`
-  height: 5vh;
-  font-family: Sailec-Bold;
-  font-size: 20px;
-  line-height: 5vh;
+	font-family: Sailec-Bold;
+	font-size: 20px;
+	line-height: 5vh;
+	padding: 20px 0px;
 `
 
 export const SearchLabel = styled(Col)`
-	line-height: 5vh;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 20px auto;
 `
 
 export const SearchBox = styled(FormControl)`
 	border-radius: 0px;
-	line-height: 5vh;
+	width: 100%;
+	margin: 20px auto;
 `
 
-export const ActivateButton = styled(Button)`
-	border-radius: 3px !important;
+export const ExportButton = styled(CSVLink)`
+	border-radius: 25px !important;
 	border: #707070 1px solid;
-	color: white !important;
 	background-color: #35454F;
-
+	width: 100%;
+	color: white;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle !important;
+	margin: 20px auto;
 	&:hover {
 		background-color: white;
 		color: #35454F !important;
 	}
 `
+
+export const ActivateButton = styled(Button)`
+	border-radius: 25px !important;
+	border: #707070 1px solid;
+	color: white !important;
+	background-color: #35454F;
+	width: 100%;
+	margin: 20px auto;
+	&:hover {
+		background-color: white;
+		color: #35454F !important;
+	}
+`
+
 export const DataTable = styled(Table)`
     background-color: white;
 `
@@ -91,6 +103,7 @@ export const ClientLabel = styled(Col)`
 	text-align: right;
 	font-family: Sailec-Bold;
 `
+
 export const ClientData = styled(Col)`
     color: #35454F;
     opacity: 0.5;

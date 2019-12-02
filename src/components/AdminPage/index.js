@@ -12,6 +12,7 @@ import {
 	TopMenu, 
 	LumeLogo,
 	SearchPanel,
+	SearchLabel,
 	SearchBox,
 	ExportButton, 
 	ActivateButton, 
@@ -56,16 +57,18 @@ const AdminPage = ({dataProvider}) => {
 		<PageContainer>
 			<ContentContainer>
 				<TopMenu>
-					<Col md={2}>
+					<Col lg={2}>
 						<LumeLogo src={Logo} />
 					</Col>
 				</TopMenu>
 				<SearchPanel>
-					<Col md={2}> Search User </Col>
-					<Col md={5}>
+					<Col lg={2} md={3} sm={2}>
+						<SearchLabel> Search User </SearchLabel>
+					</Col>
+					<Col lg={4} md={9} sm={9}>
 						<SearchBox placeholder="Enter User Email" />
 					</Col>
-					<Col md={{span: '1', offset: '2'}}>
+					<Col lg={{span: '2', offset: '2'}} md={6} sm={6}>
 						<ExportButton
 							data={users}
 							filename={"clients.csv"}
@@ -75,7 +78,7 @@ const AdminPage = ({dataProvider}) => {
 							Export
 						</ExportButton>
 					</Col>
-					<Col md={{span: '2'}}>
+					<Col lg={2} md={6} sm={6}>
 						<Link to="/10SS-01">
 							<ActivateButton>
 								Activate Quiz
