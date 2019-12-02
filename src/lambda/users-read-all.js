@@ -37,8 +37,7 @@ exports.handler = async (event, context, callback) => {
           headers: {
             'Content-Type':'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Request-Headers': '*',
-            'X-Total-Count':data.length
+            'Access-Control-Request-Headers': '*'
           }, 
           body: JSON.stringify(data)
         })
