@@ -20,19 +20,30 @@ exports.handler = async (event, context, callback) => {
     preflight(callback);
   } else {
     try {
-      const users_detail = await User_Details.find()
-      callback(null, {
-        statusCode: 200, 
-        headers: {
-          'Content-Type':'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Request-Headers': '*',
-          'X-Total-Count':users_detail.length
-        }, 
-        body: JSON.stringify(users_detail)
+      await User_Details.find({},function(err, data){
+        if(err){
+          callback(null, {
+            statusCode: 500,
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Request-Headers': '*',
+            },
+            body: JSON.stringify({msg: err.message})
+          })
+        }
+        callback(null, {
+          statusCode: 200, 
+          headers: {
+            'Content-Type':'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Request-Headers': '*',
+            'X-Total-Count':data.length
+          }, 
+          body: JSON.stringify(data)
+        })
       })
     } catch (err) {
-      console.log(err)
       callback(null, {
         statusCode: 500,
         headers: {
