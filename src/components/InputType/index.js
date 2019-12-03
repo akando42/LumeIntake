@@ -22,11 +22,7 @@ const InputType = ({questions, title, subtitle, previous, next, updateState}) =>
 	}
 
 	return (
-		<PageContainer fluid="true">
-			<Row>
-				<AdminLink to="/admin">Admin</AdminLink>
-			</Row>
-			
+		<PageContainer fluid="true">			
 			<Row>
 				<Title md={{span: '6', offset: '3'}} xs={12}>
 					{title}
