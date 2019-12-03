@@ -36,21 +36,23 @@ export const SearchPanel = styled(Row)`
 	font-family: Sailec-Bold;
 	font-size: 20px;
 	line-height: 5vh;
-	padding: 20px 0px;
+	padding: 20px 0px 10px 0px;
 `
 
 export const SearchLabel = styled(Col)`
 	width: 100%;
 	font-size: 20px;
-	text-align: center;
+	text-align: left;
+	font-family: Sailec-Bold;
 	vertical-align: middle;
-	margin: 20px auto;
+	margin: 10px auto;
 `
 
 export const SearchBox = styled(FormControl)`
 	border-radius: 0px;
 	width: 100%;
 	margin: 20px auto;
+	color: #ccc;
 `
 
 export const ExportButton = styled(CSVLink)`

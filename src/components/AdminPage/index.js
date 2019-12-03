@@ -62,13 +62,13 @@ const AdminPage = ({dataProvider}) => {
 					</Col>
 				</TopMenu>
 				<SearchPanel>
-					<Col lg={2} md={3} sm={2}>
+					<Col lg={3} md={3} sm={2}>
 						<SearchLabel> Search User </SearchLabel>
 					</Col>
 					<Col lg={4} md={9} sm={9}>
-						<SearchBox placeholder="Enter User Email" />
+						<SearchBox placeholder="Search by Name or Email" />
 					</Col>
-					<Col lg={{span: '2', offset: '2'}} md={6} sm={6}>
+					<Col lg={2} md={6} sm={6}>
 						<ExportButton
 							data={users}
 							filename={"clients.csv"}
@@ -78,7 +78,7 @@ const AdminPage = ({dataProvider}) => {
 							Export
 						</ExportButton>
 					</Col>
-					<Col lg={2} md={6} sm={6}>
+					<Col lg={3} md={6} sm={6}>
 						<Link to="/10SS-01">
 							<ActivateButton>
 								Activate Quiz
