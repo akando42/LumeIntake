@@ -34,7 +34,6 @@ export function SecondStrike(props){
 		let updatedQuestion = intakeQuestions[idx];
 		updatedQuestion.value = value;
 		intakeQuestions[idx] = updatedQuestion;
-
 		setIntakeQuestions(intakeQuestions)
 	}
 

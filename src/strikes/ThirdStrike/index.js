@@ -6,42 +6,23 @@ import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 import { thirdStrike } from '../../tools/api';
 import CheckBoxType from '../../components/CheckBoxType';
 
-// const title = 'What’s the reason for your visit today?'
-// const subtitle = 'Please select all that apply'
-// const previous = '/10SS-4'
-// const next = '/10SS-6'
-// const options = [
-// 	{
-// 		id: 1,
-// 	 	content:'JUST CHECKING IT OUT'
-// 	},
-// 	{
-// 		id: 2,
-// 	 	content:'OVERALL WELLNESS',
-// 	},
-// 	{
-// 		id: 3,
-// 	 	content:'TO ADDRESS A SPECIFIC CONCERN'
-// 	}
-// ]
-
 export function ThirdStrike(props){
 	const [intakeOptions, setIntakeOptions] = useState([]);
 	const [pageTitle, setPageTitle] = useState('');
 	const [pageSubtitle, setPageSubtitle] = useState('');
-	const [prevPage, setPrevPage] = useEffect('');
-	const [nextPage, setNextPage] = useEffect('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
 	async function getPageContent(){
 		const res = await axios.get(
 	      `${CMS_API_URL}${thirdStrike}?token=${CMS_API_TOKEN}`,
 	    );
 		console.log("Third Strike Data", res.data);
-	    setIntakeOptions(res.data.options);
-		setPageTitle(res.data.title);
-		setPageSubtitle(res.data.subtitle);
-		setPrevPage(res.data.previous);
-		setNextPage(res.data.next);
+	    setIntakeOptions(res.data.Options);
+		setPageTitle(res.data.Title);
+		setPageSubtitle(res.data.Subtitle);
+		setPrevPage(res.data.Previous);
+		setNextPage(res.data.Next);
 	}
 
 	useEffect(() => {

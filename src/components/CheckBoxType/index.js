@@ -37,7 +37,7 @@ const CheckBoxType = ({title, subtitle, options, previous, next}) => {
 				<LumeForm md={{span: '8', offset: '2'}} sm={{span: '10', offset: '1'}}> 
 					<Form>
 					    <Form.Group controlId="formHorizontalEmail">
-							{/*<Col>
+							<Col>
 								{
 									options.map( 
 										(item, idx) => (
@@ -54,7 +54,6 @@ const CheckBoxType = ({title, subtitle, options, previous, next}) => {
 									)
 								}
 							</Col>
-							*/}
 					    </Form.Group>
 				    </Form>
 				</LumeForm>
