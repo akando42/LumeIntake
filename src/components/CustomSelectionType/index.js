@@ -9,7 +9,6 @@ import {
 	Logo,
 	Title, 
 	Subtitle, 
-	AdminLink,
 	OptionsList, 
 	Option,
 	SelectButton, 
