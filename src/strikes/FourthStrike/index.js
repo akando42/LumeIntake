@@ -6,7 +6,7 @@ import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 import { fourthStrike } from '../../tools/api';
 import CheckBoxType from '../../components/CheckBoxType';
 
-export function FourthStrike(props){
+function FourthStrike(props){
 	const [intakeOptions, setIntakeOptions] = useState([]);
 	const [pageTitle, setPageTitle] = useState('');
 	const [pageSubtitle, setPageSubtitle] = useState('');

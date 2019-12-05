@@ -19,7 +19,6 @@ import {
 
 const CustomSelectionType = ({title, subtitle, options, previous, next}) => (
 	<PageContainer fluid="true">
-        <AdminLink to="/admin">Admin</AdminLink>
         <Logo>LUME</Logo>
         
         <Title> 
