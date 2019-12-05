@@ -55,7 +55,7 @@ export const LumeControl = styled(Form.Control)`
 export const LumeOption = styled(Form.Check)`
 	text-align: left
 	width: 80vw;
-	padding: 20px 75px;
+	padding: 20px 0px 0px 80px;
 
 	.form-check-input {
 		width: 30px;
@@ -69,6 +69,13 @@ export const LumeOption = styled(Form.Check)`
 		font-family: Sailec-Bold;
 		font-size: 25px;
 	}
+`
+
+export const OptionDetails = styled.div`
+	font-size: 16px;
+	font-family: Calluna;
+	text-align: left;
+	padding: 0px 100px;
 `
 
 export const AdminLink = styled(Link)`

@@ -13,13 +13,14 @@ import {
 	LumeLabel, 
 	LumeControl, 
 	LumeOption, 
-	AdminLink 
+	OptionDetails,
+	AdminLink,
 } from './styles'
 
-const CheckBoxType = ({title, subtitle, options, previous, next}) => {
-	// function onClick(e) {
-	// 	updateState(e.target.id)
-	// }
+const CheckBoxType = ({title, subtitle, options, previous, next, updateState}) => {
+	function onClick(e) {
+		updateState(e.target.id)
+	}
 
 	return (
 		<PageContainer fluid="true">
@@ -47,8 +48,12 @@ const CheckBoxType = ({title, subtitle, options, previous, next}) => {
 													label={item.content}
 													name="formHorizontalRadios"
 													id={item.id}
-													// onClick={onClick}
+													onClick={onClick}
 												/>
+												{item.details ?
+													<OptionDetails> {item.details} </OptionDetails> : null
+												}
+												
 											</LumeRow>
 										)
 									)
