@@ -7,25 +7,30 @@ import LumeLogo from './LUME_logo.png';
 
 import {
 	PageContainer,
-	TextLogo,
+	Logo,
 	Title, 
 	Subtitle, 
 	AdminLink, 
-	Document
+	Document,
+	Questions
 } from './styles';
 
-const SignatureType = ({title, subtitle, previous, next}) => (
+const SignatureType = ({title, subtitle, agreement, previous, next}) => (
 	<PageContainer fluid="true">
-		<TextLogo> LUME SEVEN</TextLogo>
-		<img src={LumeLogo} />
-		<Title> {title} </Title>
-		<Subtitle> {subtitle} </Subtitle>
-		<Document> 
-			My Document
-		</Document>
 		<Row>
-			<Menu previous={previous} next={next} />
+			<Logo image={LumeLogo} />
 		</Row>
+		<Row>
+			<Title> {title} </Title>
+		</Row>
+		<Document> 
+			<div dangerouslySetInnerHTML={{ __html: agreement}}></div>
+		</Document>
+		<Questions>
+			<Col>Fill In Name</Col>
+			<Col>Fill In Date</Col>
+		</Questions>
+		<Menu previous={previous} next={next} />
 	</PageContainer>
 );
 

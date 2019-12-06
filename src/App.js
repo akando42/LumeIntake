@@ -58,8 +58,8 @@ const App = () => {
             <Route exact path="/10SS-15" component={TwelveStrike} />
             <Route exact path="/10SS-16" component={ThirteenStrike} />
             <Route exact path="/10SS-17" component={FourteenStrike} />
-
-            <Route exact path="/10SS-18" component={FifthStrike} />
+            <Route exact path="/10SS-18" component={FifteenStrike} />
+            
             <Route exact path="/10SS-19" component={SixteenStrike} />
           </AnimatedSwitch>
         </Router>

@@ -1,50 +1,45 @@
 import axios from 'axios';
-import React, {memo, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import SliderType from '../../components/SliderType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { fifteenthStrike } from '../../tools/api';
 
-import saga from './saga';
-import reducer from './reducer';
-import { loadAllQuestionsRequest } from './actions';
-
-const title = "Just a few more questions..."
-const subtitle = 'Use the slider to make this statement true for you'
-const previous = '/10SS-14'
-const next = '/10SS-16'
-const selections = [
-	{
-		id: 1,
-		name: 'My exercise habits are...',
-		start:'Extreme. I do strenuous activity 5+ days a week',
-		middle:'Moderate. I work up a sweat 3+ days a week',
-		end:'Light. I work up a sweat less than 1x a week'
-	}
-]
+import SignatureType from '../../components/SignatureType';
 
 export function FifteenStrike({loadAllQuestionsRequest}){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [agreement, setAgreement]=useState({});
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-	async function getQuestions(){
+	async function getPageContent(){
 		const res = await axios.get(
-	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
+	      `${CMS_API_URL}${fifteenthStrike}?token=${CMS_API_TOKEN}`,
 	    );
-	    console.log("Getting Questions from APIs with responses", res.data.questions);
-	    setIntakeQuestions(res.data.questions);
+	    console.log("Getting Questions from APIs with responses", res.data);
+	    setIntakeQuestions(res.data.Questions);
+	    setAgreement(res.data.Document);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
+
 	useEffect(() => {
-		getQuestions();
-		// loadAllQuestionsRequest();
+		getPageContent();
 	}, [])
+
 	return (
-		<SliderType 
-			selections={selections}
-			title={title}
-			subtitle={subtitle}
-			next={next}
-			previous={previous}
+		<SignatureType 
+			title={pageTitle}
+			previous={prevPage}
+			agreement={agreement}
+			questions={intakeQuestions}
+			next={nextPage}
 		/>
 	);
 }

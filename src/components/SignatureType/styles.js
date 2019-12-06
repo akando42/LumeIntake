@@ -9,13 +9,12 @@ export const PageContainer = styled(Container)`
   background-color: #E7DDD2;  
 `
 
-export const TextLogo = styled.div`
-  width: 100vw;
-  color: #35454F;
-  font-size: 36px;
-  padding: 50px 0px;
-  text-align: center;
-  font-family: Sailec-Bold;
+export const Logo = styled.div`
+  height: 60px;
+  width: 180px;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  margin: 20px auto;
 `
 
 export const Title = styled(Col)`
@@ -33,10 +32,18 @@ export const Subtitle = styled(Col)`
 `
 
 export const Document = styled(Row)`
-    height: 60vh;
+    height: 50vh;
     width: 80%;
-    margin: 0 auto;
-    background-color: yellow;
+    margin: 20px auto;
+    overflow: scroll;
+    color: #35454F;
+    padding: 25px;
+    background-color: white;
+`
+
+export const Questions = styled(Row)`
+    width: 80%;
+    margin: 1px auto;
 `
 
 export const AdminLink = styled(Link)`

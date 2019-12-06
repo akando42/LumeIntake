@@ -12,9 +12,10 @@ export const elevenStrike = 'api/singletons/get/Eleven_Strike'
 export const twelveStrike = 'api/singletons/get/Twelve_Strike'
 export const thirteenStrike = 'api/singletons/get/Thirteen_Strike'
 export const fourteenStrike = 'api/singletons/get/Fourteen_Strike'
+export const fifteenthStrike= 'api/singletons/get/Page_15'
 
-export const fifthteen= 'api/singletons/get/Fifthteen_Strike'
-export const sixteenStrike = 'api/singletons/get/Sixteen_Strike'
 // Tobe Done 
+export const sixteenStrike = 'api/singletons/get/Sixteen_Strike'
+
 	
 export const DashboardData = '/.netlify/functions/users-read-all'
