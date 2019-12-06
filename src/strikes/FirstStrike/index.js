@@ -5,11 +5,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import InputType from '../../components/InputType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
-import { firstStrike } from '../../tools/api';
-
-import saga from './saga';
-import reducer from './reducer';
-import { loadAllQuestionsRequest } from './actions';
+import { firstStrike } from '../../tools/api';  
 
 export function FirstStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);

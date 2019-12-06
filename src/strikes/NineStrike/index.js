@@ -1,42 +1,47 @@
-import React from 'react';
-import SliderType from '../../components/SliderType';
+import axios from 'axios';
+import React, {memo, useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import CustomInputType from '../../components/CustomInputType';
+import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { nineStrike } from '../../tools/api'; 
 
-const title = "Let’s discuss your `Looks` "
-const subtitle = 'Please move the slider to best reflect you'
-const previous = '/10SS-8'
-const next = '/10SS-10'
-const selections = [
-	{
-		id: 1,
-		name: 'Skin',
-		start:'I rarely struggle with skin-health',
-		middle:'I struggle with skin-health sometimes',
-		end:'I feel struggle with skin-health all the time'
-	},
-	{
-		id: 2,
-		name: 'Aging',
-		start:'I worry about the aging process all the time',
-		middle:'I worry about the aging process sometimes',
-		end:'I worry about the aging process most of the time'
-	},
-	{
-		id: 3,
-		name: 'Weight',
-		start:'I struggle with weight management all the time',
-		middle:'I struggle with weight management sometimes',
-		end:'I have a hard time struggle with weight management'
+export function NineStrike(props){
+	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
+
+	async function getPageContent(){
+		const res = await axios.get(
+	      `${CMS_API_URL}${nineStrike}?token=${CMS_API_TOKEN}`,
+	    );
+	    console.log("Getting Questions from APIs with responses", res.data);
+	    setIntakeQuestions(res.data.Questions);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
-]
 
-const NineStrike = () => (
-	<SliderType 
-		selections={selections}
-		title={title}
-		subtitle={subtitle}
-		next={next}
-		previous={previous}
-	/>
-)
+	useEffect(() => {
+		getPageContent();
+	}, [])
+
+	function onChange(idx, value){
+		console.log("Submitting value", idx, value);
+	}
+
+	return (
+		<CustomInputType
+			questions={intakeQuestions} 
+			title={pageTitle}
+			next={nextPage}
+			updateState={onChange}
+		/>
+	);
+}
 
 export default NineStrike;
