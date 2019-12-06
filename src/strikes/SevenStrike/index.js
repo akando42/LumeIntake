@@ -1,18 +1,41 @@
-import React from 'react';
-import SignatureType from '../../components/SignatureType';
+import React, {useEffect, useState} from 'react';
+import SliderType from '../../components/SliderType';
+import axios from 'axios'
+import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { sevenStrike } from '../../tools/api';
 
-const title = 'Waiver and Release'
-const subtitle = ''
-const previous = '/10SS-7'
-const next = '/10SS-9/'
+function SevenStrike(props){
+	const [intakeScales, setIntakeScales] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-const SevenStrike = () => (
-	<SignatureType 
-	    title={title}
-	    subtitle={subtitle}
-	    next={next}
-	    previous={previous}
-	/>
-)
+	async function getPageContent(){
+		const res = await axios.get(
+	      `${CMS_API_URL}${sevenStrike}?token=${CMS_API_TOKEN}`,
+	    );
+		console.log("Seven Strike Data", res.data);
+	    setIntakeScales(res.data.Scales);
+		setPageTitle(res.data.Title);
+		setPageSubtitle(res.data.Subtitle);
+		setPrevPage(res.data.Previous);
+		setNextPage(res.data.Next);
+	}
+
+	useEffect(() => {
+		getPageContent()
+	}, [])
+
+	return (
+		<SliderType
+			scales={intakeScales} 
+		    title={pageTitle}
+		    subtitle={pageSubtitle} 
+		    next={nextPage}
+		    previous={prevPage}
+		/>
+	)
+}
 
 export default SevenStrike;

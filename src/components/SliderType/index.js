@@ -34,7 +34,7 @@ const SliderType = ({title, subtitle, scales, previous, next}) => (
 	       		{
 	       			scales.map(
 	       				item => (
-	       					<div key={item.id}>
+	       					<div key={item.name}>
 	       						<Row>
 	       							<SliderLabel md={2}>
 										{item.name}

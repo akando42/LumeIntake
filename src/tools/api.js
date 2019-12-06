@@ -4,10 +4,9 @@ export const thirdStrike = 'api/singletons/get/Third_Strike'
 export const fourthStrike = 'api/singletons/get/Fourth_Strike'
 export const fifthStrike = 'api/singletons/get/Fifth_Strike'
 export const sixStrike = 'api/singletons/get/Sixth_Strike'
-export const sevenStrike = 'api/singletons/get/seventh_strike'
-// Tobe Done
+export const sevenStrike = 'api/singletons/get/Seven_Strike'
+export const eightStrike = 'api/singletons/get/Eighth_Strike'
 
-export const eightStrike = 'api/singletons/get/eighth_strike'
 export const nineStrike = 'api/singletons/get/nineth_strike'
 export const tenStrike = 'api/singletons/get/tenth_strike'
 export const elevenStrike = 'api/singletons/get/eleven_strike'
