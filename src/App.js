@@ -30,7 +30,7 @@ import TenStrike from './strikes/TenStrike';
 import ElevenStrike from './strikes/ElevenStrike';
 import TwelveStrike from './strikes/TwelveStrike';
 import ThirteenStrike from './strikes/ThirteenStrike';
-import FourteenStrike from './strikes/FourthStrike';
+import FourteenStrike from './strikes/FourteenStrike';
 import FifteenStrike from './strikes/FifteenStrike';
 import SixteenStrike from './strikes/SixteenStrike';
 
@@ -55,10 +55,10 @@ const App = () => {
             <Route exact path="/10SS-12" component={NineStrike} />
             <Route exact path="/10SS-13" component={TenStrike} />
             <Route exact path="/10SS-14" component={ElevenStrike} />
-            
             <Route exact path="/10SS-15" component={TwelveStrike} />
             <Route exact path="/10SS-16" component={ThirteenStrike} />
-            <Route exact path="/10SS-17" component={FourthStrike} />
+            <Route exact path="/10SS-17" component={FourteenStrike} />
+
             <Route exact path="/10SS-18" component={FifthStrike} />
             <Route exact path="/10SS-19" component={SixteenStrike} />
           </AnimatedSwitch>

@@ -1,54 +1,52 @@
 import axios from 'axios';
-import React, {memo, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import SliderType from '../../components/SliderType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { fourteenStrike } from '../../tools/api';
+import LargeTextForm from '../../components/LargeTextForm';
 
-import saga from './saga';
-import reducer from './reducer';
-import { loadAllQuestionsRequest } from './actions';
-
-const title = "Just a few more questions..."
-const subtitle = 'Use the slider to make this statement true for you'
-const previous = '/10SS-13'
-const next = '/10SS-15'
-const selections = [
-	{
-		id: 1,
-		name: 'My sleep habits are...',
-		start:'Healthy. I always get ~8 hours of uninterrupted sleep every night',
-		middle:'Average. I mostly get ~8 hours of uninterrupted sleep every night',
-		end:'Poor. I struggle with getting enough sleep, falling asleep, waking up or staying asleep through the night'
-	}
-]
-
-export function FourteenStrike({loadAllQuestionsRequest}){
+export function FourteenStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-	async function getQuestions(){
+	async function getPageContent(){
 		const res = await axios.get(
-	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
+	      `${CMS_API_URL}${fourteenStrike}?token=${CMS_API_TOKEN}`,
 	    );
-	    console.log("Getting Questions from APIs with responses", res.data.questions);
-	    setIntakeQuestions(res.data.questions);
+	    console.log("Getting Questions from APIs with responses", res.data);
+	    setIntakeQuestions(res.data.Questions);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
+
 	useEffect(() => {
-		getQuestions();
-		// loadAllQuestionsRequest();
+		getPageContent();
 	}, [])
+
+	function onChange(idx, value) {
+		let updatedQuestion = intakeQuestions[idx];
+		updatedQuestion.value = value;
+		intakeQuestions[idx] = updatedQuestion;
+		setIntakeQuestions(intakeQuestions)
+	}
+
 	return (
-		<SliderType 
-			selections={selections}
-			title={title}
-			subtitle={subtitle}
-			next={next}
-			previous={previous}
+		<LargeTextForm
+		    questions={intakeQuestions} 
+		    title={pageTitle}
+		    subtitle={pageSubtitle} 
+		    next={nextPage}
+		    previous={prevPage}
+		    updateState={onChange}
 		/>
 	);
 }
-	
 
-
-export default FourteenStrike;
+export default FourteenStrike
