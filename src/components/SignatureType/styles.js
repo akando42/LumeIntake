@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { devices } from '../../devices';
-// import Logo from '../../assets/Lume_logo.png';
 import { Col, Row, Form, Container, Button} from 'react-bootstrap';
 
 export const PageContainer = styled(Container)`
@@ -46,8 +45,36 @@ export const Questions = styled(Row)`
     margin: 1px auto;
 `
 
-export const AdminLink = styled(Link)`
-    position: absolute;
-    right: 50px;
-    top: 50px;
+export const Question = styled(Col)`
+    display: inline-block;
+    font-family: Sailec-Bold;
+    font-size: 21px;
 `
+
+export const LumeLabel = styled(Form.Label)`
+  font-family: Sailec-Bold;
+  display: inline-block;
+  padding: 10px 0px;
+  line-height: 49px;
+  text-align: left;
+  font-size: 21px;
+  height: 49px;
+  width: 25vw;
+  width: 100%;
+`
+
+export const LumeControlBox = styled.div`
+  display: inline-block;
+  height: 49px;
+  width: 45vw;
+`
+
+export const LumeControl = styled(Form.Control)`
+  border-radius: 0px;
+  border: 0px;
+  text-align: left;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 20px;
+` 

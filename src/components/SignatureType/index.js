@@ -12,10 +12,13 @@ import {
 	Subtitle, 
 	AdminLink, 
 	Document,
-	Questions
+	Questions,
+	Question,
+	LumeLabel,
+	LumeControl
 } from './styles';
 
-const SignatureType = ({title, subtitle, agreement, previous, next}) => (
+const SignatureType = ({title, subtitle, agreement, questions, previous, next}) => (
 	<PageContainer fluid="true">
 		<Row>
 			<Logo image={LumeLogo} />
@@ -27,8 +30,19 @@ const SignatureType = ({title, subtitle, agreement, previous, next}) => (
 			<div dangerouslySetInnerHTML={{ __html: agreement}}></div>
 		</Document>
 		<Questions>
-			<Col>Fill In Name</Col>
-			<Col>Fill In Date</Col>
+			{
+				questions.map(item => (
+					<Question key={item.label} md={6}>
+						<LumeControl
+							type="text"
+							placeholder={item.placeholder}
+						/>
+						<LumeLabel>
+							{item.label}
+						</LumeLabel>
+					</Question>
+				))
+			}
 		</Questions>
 		<Menu previous={previous} next={next} />
 	</PageContainer>

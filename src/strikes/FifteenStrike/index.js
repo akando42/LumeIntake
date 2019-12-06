@@ -21,10 +21,11 @@ export function FifteenStrike({loadAllQuestionsRequest}){
 	      `${CMS_API_URL}${fifteenthStrike}?token=${CMS_API_TOKEN}`,
 	    );
 	    console.log("Getting Questions from APIs with responses", res.data);
-	    setIntakeQuestions(res.data.Questions);
-	    setAgreement(res.data.Document);
+
 	    setPageTitle(res.data.Title);
 	    setPageSubtitle(res.data.Subtitle);
+	    setIntakeQuestions(res.data.Questions);
+	    setAgreement(res.data.Document);
 	    setPrevPage(res.data.Previous);
 	    setNextPage(res.data.Next);
 	}

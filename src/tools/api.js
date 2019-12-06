@@ -13,8 +13,6 @@ export const twelveStrike = 'api/singletons/get/Twelve_Strike'
 export const thirteenStrike = 'api/singletons/get/Thirteen_Strike'
 export const fourteenStrike = 'api/singletons/get/Fourteen_Strike'
 export const fifteenthStrike= 'api/singletons/get/Page_15'
-
-// Tobe Done 
 export const sixteenStrike = 'api/singletons/get/Sixteen_Strike'
 
 	
