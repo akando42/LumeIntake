@@ -3,7 +3,7 @@ export const secondStrike = 'api/singletons/get/second_strike'
 export const thirdStrike = 'api/singletons/get/Third_Strike'
 export const fourthStrike = 'api/singletons/get/Fourth_Strike'
 export const fifthStrike = 'api/singletons/get/Fifth_Strike'
-export const sixStrike = 'api/singletons/get/sixth_strike'
+export const sixStrike = 'api/singletons/get/Sixth_Strike'
 export const sevenStrike = 'api/singletons/get/seventh_strike'
 // Tobe Done
 

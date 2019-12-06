@@ -17,30 +17,6 @@ import iconMood from './SelectionIcons/iconMood.png';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
 import { fifthStrike } from '../../tools/api';
 
-// import Icon31 from './SelectionIcons/iconAging.png';
-// import Icon31 from './SelectionIcons/iconAging.png';
-// import Icon31 from './SelectionIcons/iconAging.png';
-
-
-const title = 'What’s the reason for your visit today?'
-const subtitle = 'Please select all that apply'
-const previous = '/10SS-11'
-const next = '/10SS-7'
-const options = [
-	{ "icon":iconSleep, "name":"SLEEP"},
-	{ "icon":iconMood, "name":"MOOD"},
-	{ "icon":iconStress, "name":"STRESS"},
-	{ "icon":iconDigesion, "name":"ENERGY"},
-	{ "icon":iconMood, "name":"MEMORY"},
-	{ "icon":iconImmunity, "name":"IMMUNITY"},
-	{ "icon":iconSkinHair, "name":"HAIR/SKIN"},
-	{ "icon":iconDigesion, "name":"DIGESTION"},
-	{ "icon":iconAging, "name":"AGING"},
-	{ "icon":iconWeightManagement, "name":"WEIGHT MANAGEMENT"},
-	{ "icon":iconPain, "name":"PAINT MANAGEMENT"},
-	{ "icon":iconMuscleRecovery, "name":"MUSCLE RECOVERY+ PERFORMANCE"}
-]
-
 
 function FifthStrike(props){
 	const [intakeOptions, setIntakeOptions] = useState([]);

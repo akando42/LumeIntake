@@ -21,10 +21,8 @@ import {
 } from './styles';
 
 
-const SliderType = ({title, subtitle, selections, previous, next}) => (
+const SliderType = ({title, subtitle, scales, previous, next}) => (
 	<PageContainer fluid="true">
-		<AdminLink to="/admin">Admin</AdminLink>
-        
         <Logo>LUME</Logo>
         <Title> {title} </Title>
         
@@ -34,7 +32,7 @@ const SliderType = ({title, subtitle, selections, previous, next}) => (
        	<Row>
 	       	<SlideContainer md={{span: '8', offset: '2'}}>
 	       		{
-	       			selections.map(
+	       			scales.map(
 	       				item => (
 	       					<div key={item.id}>
 	       						<Row>
