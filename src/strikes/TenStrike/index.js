@@ -3,66 +3,46 @@ import React, {memo, useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import SliderType from '../../components/SliderType';
+import CustomInputType from '../../components/CustomInputType';
 import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { tenStrike } from '../../tools/api'; 
 
-import saga from './saga';
-import reducer from './reducer';
-import { loadAllQuestionsRequest } from './actions';
-
-const title = "Let’s discuss your `Functions` "
-const subtitle = 'Please move the slider to best reflect you'
-const previous = '/10SS-9'
-const next = '/10SS-11'
-const selections = [
-	{
-		id: 1,
-		name: 'Energy',
-		start:'I have a lot of energy',
-		middle:'I struggle with my energy levels sometimes',
-		end:'I struggle with having enough energy to get through the day'
-	},
-	{
-		id: 2,
-		name: 'Immunity',
-		start:'I rarely get sick',
-		middle:'I get sick a normal amount',
-		end:'I get sick too offen'
-	},
-	{
-		id: 3,
-		name: 'Pain',
-		start:'I rarely have aches & pain in my body',
-		middle:'Sometimes I have aches & pains after strenous activity',
-		end:'I often have unexplained aches & pains'
-	}
-]
-
-export function TenStrike({loadAllQuestionsRequest}){
+export function TenStrike(props){
 	const [intakeQuestions, setIntakeQuestions] = useState([]);
+	const [pageTitle, setPageTitle] = useState('');
+	const [pageSubtitle, setPageSubtitle] = useState('');
+	const [prevPage, setPrevPage] = useState('');
+	const [nextPage, setNextPage] = useState('');
 
-	async function getQuestions(){
+	async function getPageContent(){
 		const res = await axios.get(
-	      CMS_API_URL+'api/singletons/get/first_strike?token='+CMS_API_TOKEN,
+	      `${CMS_API_URL}${tenStrike}?token=${CMS_API_TOKEN}`,
 	    );
-	    console.log("Getting Questions from APIs with responses", res.data.questions);
-	    setIntakeQuestions(res.data.questions);
+	    console.log("Getting Questions from APIs with responses", res.data);
+	    setIntakeQuestions(res.data.Questions);
+	    setPageTitle(res.data.Title);
+	    setPageSubtitle(res.data.Subtitle);
+	    setPrevPage(res.data.Previous);
+	    setNextPage(res.data.Next);
 	}
+
 	useEffect(() => {
-		getQuestions();
-		// loadAllQuestionsRequest();
+		getPageContent();
 	}, [])
+
+	function onChange(idx, value){
+		console.log("Submitting value", idx, value);
+	}
+
 	return (
-		<SliderType 
-			selections={selections}
-			title={title}
-			subtitle={subtitle}
-			next={next}
-			previous={previous}
+		<CustomInputType
+			questions={intakeQuestions} 
+			title={pageTitle}
+			next={nextPage}
+			previous={prevPage}
+			updateState={onChange}
 		/>
 	);
 }
-	
-
 
 export default TenStrike;

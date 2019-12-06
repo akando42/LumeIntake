@@ -35,24 +35,47 @@ const SliderType = ({title, subtitle, scales, previous, next}) => (
 	       			scales.map(
 	       				item => (
 	       					<div key={item.name}>
-	       						<Row>
-	       							<SliderLabel md={2}>
-										{item.name}
-									</SliderLabel>
-		       						<RangeContainer md={10}>
-			       						<Slider type="range" min="0" max="100" step="25" list="steplist" />
-										<datalist id="steplist">
-										    <option>{item.start}</option>
-										    <option>{item.middle}</option>
-										    <option>{item.end}</option>
-										</datalist>
-										<Row>
-		       								<Start md={2}>{item.start}</Start>
-		       								<Middle md={8}>{item.middle}</Middle>
-		       								<End md={2}>{item.end}</End>
-		       							</Row>
-									</RangeContainer>
-								</Row>
+	       					{ item.linebreak ? 
+	       						(
+		       						<Row>
+		       							<SliderLabel md={12}  style={{textAlign: 'center'}} >
+											{item.name}
+										</SliderLabel>
+			       						<RangeContainer md={12}>
+				       						<Slider type="range" min="0" max="100" step="25" list="steplist" />
+											<datalist id="steplist">
+											    <option>{item.start}</option>
+											    <option>{item.middle}</option>
+											    <option>{item.end}</option>
+											</datalist>
+											<Row>
+			       								<Start md={2}>{item.start}</Start>
+			       								<Middle md={8}>{item.middle}</Middle>
+			       								<End md={2}>{item.end}</End>
+			       							</Row>
+										</RangeContainer>
+									</Row>
+								):(
+									<Row>
+		       							<SliderLabel md={2}>
+											{item.name}
+										</SliderLabel>
+			       						<RangeContainer md={10}>
+				       						<Slider type="range" min="0" max="100" step="25" list="steplist" />
+											<datalist id="steplist">
+											    <option>{item.start}</option>
+											    <option>{item.middle}</option>
+											    <option>{item.end}</option>
+											</datalist>
+											<Row>
+			       								<Start md={2}>{item.start}</Start>
+			       								<Middle md={8}>{item.middle}</Middle>
+			       								<End md={2}>{item.end}</End>
+			       							</Row>
+										</RangeContainer>
+									</Row>
+								)
+							}
 	       					</div>
 	       				)
 	       			)

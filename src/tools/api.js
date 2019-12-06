@@ -7,10 +7,9 @@ export const sixStrike = 'api/singletons/get/Sixth_Strike'
 export const sevenStrike = 'api/singletons/get/Seven_Strike'
 export const eightStrike = 'api/singletons/get/Eighth_Strike'
 export const nineStrike = 'api/singletons/get/Nine_Strike'
-// Done 
-
-export const tenStrike = 'api/singletons/get/Tenth_Strike'
+export const tenStrike = 'api/singletons/get/Page_10'
 export const elevenStrike = 'api/singletons/get/Eleven_Strike'
+
 export const twelfthStrike = 'api/singletons/get/Twelve_Strike'
 export const thirteenStrike = 'api/singletons/get/Thirteen_Strike'
 export const fourteenStrike = 'api/singletons/get/Fourteen_Strike'

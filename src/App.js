@@ -53,9 +53,9 @@ const App = () => {
             <Route exact path="/10SS-08" component={SevenStrike} />
             <Route exact path="/10SS-09" component={EightStrike} />
             <Route exact path="/10SS-12" component={NineStrike} />
-            
             <Route exact path="/10SS-13" component={TenStrike} />
             <Route exact path="/10SS-14" component={ElevenStrike} />
+            
             <Route exact path="/10SS-15" component={TwelveStrike} />
             <Route exact path="/10SS-16" component={ThirteenStrike} />
             <Route exact path="/10SS-17" component={FourthStrike} />

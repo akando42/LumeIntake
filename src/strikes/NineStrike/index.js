@@ -39,6 +39,7 @@ export function NineStrike(props){
 			questions={intakeQuestions} 
 			title={pageTitle}
 			next={nextPage}
+			previous={prevPage}
 			updateState={onChange}
 		/>
 	);
