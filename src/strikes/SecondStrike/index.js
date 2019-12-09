@@ -35,7 +35,7 @@ export function SecondStrike(props){
 		const clientEmail = localStorage.getItem('clientEmail');
 
 		const res = await axios.post(
-			`${LAMBDA_API}/users-create`,{
+			`${LAMBDA_API}/users-update`,{
 				"email":clientEmail,
 				"user_details":clientData
 			}
@@ -62,6 +62,7 @@ export function SecondStrike(props){
 		    next={nextPage}
 		    previous={prevPage}
 		    updateState={onChange}
+		    sendData={updateData}
 		/>
 	);
 }

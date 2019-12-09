@@ -132,8 +132,12 @@ const AdminPage = ({dataProvider}) => {
 						<ClientData md={6}>{userProfile.dob}</ClientData>
 					</Row>
 					<Row>
-						<ClientLabel>EMERGENCY CONTACT</ClientLabel>
-						<ClientData>{userProfile.emergencyContact}</ClientData>
+						<ClientLabel>EMERGENCY CONTACT NAME</ClientLabel>
+						<ClientData>{userProfile.emergencyContactName}</ClientData>
+					</Row>
+					<Row>
+						<ClientLabel>EMERGENCY CONTACT NUMBERA</ClientLabel>
+						<ClientData>{userProfile.emergencyContactNumber}</ClientData>
 					</Row>
 					<Row>
 						<ClientLabel>REASON FOR VISIT</ClientLabel>
