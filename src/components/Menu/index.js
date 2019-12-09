@@ -29,6 +29,7 @@ const NextLink = styled(Link)`
     float: right;
 `
 
+
 const Menu = (props) => (
 	<ArrowMenu>
 		{
@@ -42,7 +43,7 @@ const Menu = (props) => (
 		}
 		{
 			props.next ? (
-			    <NextLink to={props.next}>
+			    <NextLink to={props.next} onClick={props.sendData}>
 					Next <span>&#10230;</span>
 				</NextLink>
 			):(

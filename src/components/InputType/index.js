@@ -16,7 +16,7 @@ import {
 	AdminLink,
 } from './styles'
 
-const InputType = ({questions, title, subtitle, previous, next, updateState}) => {
+const InputType = ({questions, title, subtitle, previous, next, updateState, sendData}) => {
 	function onChange(e) {
 		updateState(e.target.getAttribute('data-id'), e.target.value)
 	}
@@ -55,7 +55,7 @@ const InputType = ({questions, title, subtitle, previous, next, updateState}) =>
 					}
 				</Form.Group>
 			</LumeForm>
-			<Menu previous={previous} next={next} />
+			<Menu previous={previous} next={next} sendData={sendData}/>
 		</PageContainer>
 	)
 };

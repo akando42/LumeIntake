@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { CMS_API_URL, CMS_API_TOKEN} from '../../configs';
+import { CMS_API_URL, CMS_API_TOKEN, LAMBDA_API} from '../../configs';
 import { secondStrike } from '../../tools/api';
 import InputType from '../../components/InputType';
 
@@ -24,6 +24,23 @@ export function SecondStrike(props){
 	    setPageSubtitle(res.data.Subtitle);
 	    setPrevPage(res.data.Previous);
 	    setNextPage(res.data.Next);
+	}
+
+	async function updateData(){
+		const clientData = {
+			"emergencyContactName":intakeQuestions[0].value,
+			"emergencyContactNumber":intakeQuestions[1].value
+		}
+
+		const clientEmail = localStorage.getItem('clientEmail');
+
+		const res = await axios.post(
+			`${LAMBDA_API}/users-create`,{
+				"email":clientEmail,
+				"user_details":clientData
+			}
+		);
+		console.log(res);
 	}
 
 	useEffect(() => {

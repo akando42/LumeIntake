@@ -19,10 +19,14 @@ const schema = new mongoose.Schema({
           type: String,
           required: [false, 'Date of Birth is required']
         },
-        emergencyContact: {
+        emergencyContactName: {
           type: String,
-          required: [false, 'Emergency Contact is required']
+          required: [false, 'Emergency Contact Name is not required']
         }, 
+        emergencyContactNumber: {
+          type: String,
+          required: [false, 'Emergency Contact Number is not required']
+        },
         reason_for_visit: {
           type: String,
           required: [false, 'Reason for Visiting']

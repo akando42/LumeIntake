@@ -38,15 +38,12 @@ const AdminPage = ({dataProvider}) => {
 		const data = {"email": email};
 		const res = await axios.post(`${LAMBDA_API}/users-read-one`,data);
 		setUserProfile(res.data);
-		console.log("Getting Data for User Profile", res.data);
 		setShow(true)
 	}
 
 	async function fetchUsers(){
 		const res = await axios.get(`${LAMBDA_API}/users-read-all`);
-		console.log("data")
 		setUsers(res.data);
-		console.log("User List",res.data);
 	}	
 
 	useEffect(() => {

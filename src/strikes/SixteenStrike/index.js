@@ -22,8 +22,6 @@ export function SixteenStrike({loadAllQuestionsRequest}){
 		const res = await axios.get(
 	      `${CMS_API_URL}${sixteenStrike}?token=${CMS_API_TOKEN}`,
 	    );
-	    console.log("Last Page", res.data);
-
 	    setPageTitle(res.data.Title);
 	    setPageSubtitle(res.data.Subtitle);
 
