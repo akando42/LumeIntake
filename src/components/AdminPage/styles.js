@@ -71,6 +71,10 @@ export const ExportButton = styled(CSVLink)`
 	}
 `
 
+export const StartSection = styled(Row)`
+	margin: 100px auto;
+`
+
 export const ActivateButton = styled(Button)`
 	border-radius: 25px !important;
 	border: #707070 1px solid;
@@ -98,14 +102,12 @@ export const ClientProfileModal = styled(Modal)`
 	font-family: Sailec-Bold;
 	font-family: 28px;
 `
-
 export const ClientLabel = styled(Col)`
 	color: #35454F;
 	font-size: 20px;
 	text-align: right;
 	font-family: Sailec-Bold;
 `
-
 export const ClientData = styled(Col)`
     color: #35454F;
     opacity: 0.5;
