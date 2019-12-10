@@ -56,6 +56,7 @@ const AdminPage = ({dataProvider}) => {
 		const res = await axios.post(`${LAMBDA_API}/authenticate`,payload);
 		console.log("Pass",e.target,"Token", res.data.token);
 		localStorage.setItem("token",res.data.token);
+		window.location.reload(); 
 	}
 
 	useEffect(() => {
@@ -205,15 +206,17 @@ const AdminPage = ({dataProvider}) => {
 								</TopMenu>
 								<StartSection>
 									<Col md={{span:"6", offset: "3"}} >
-										<Form.Group controlId="password" submit={login}>
-											<Form.Control 
-											    type="text" 
-											    placeholder="Please enter password to access"
-											/> 
-											<ActivateButton type="submit">
-												START
-											</ActivateButton>
-										</Form.Group>
+										
+											<Form.Group controlId="password" >
+												<Form.Control 
+												    type="password" 
+												    placeholder="Please enter password to access"
+												/> 
+												<ActivateButton type="submit" onClick={login}>
+													START
+												</ActivateButton>
+											</Form.Group>
+										
 									</Col>
 								</StartSection>
 							</ContentContainer>
