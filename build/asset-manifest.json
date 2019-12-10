@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.ef68e3ed.chunk.css",
-    "main.js": "/static/js/main.da556c3f.chunk.js",
-    "main.js.map": "/static/js/main.da556c3f.chunk.js.map",
+    "main.js": "/static/js/main.d4ddf65f.chunk.js",
+    "main.js.map": "/static/js/main.d4ddf65f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8eea71de.js",
     "runtime-main.js.map": "/static/js/runtime-main.8eea71de.js.map",
     "static/js/2.53a75d91.chunk.js": "/static/js/2.53a75d91.chunk.js",
     "static/js/2.53a75d91.chunk.js.map": "/static/js/2.53a75d91.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.589cb7093a9935061cb763bdefc7a011.js": "/precache-manifest.589cb7093a9935061cb763bdefc7a011.js",
+    "precache-manifest.ac0c60c181a0b7ab77a42c2a87852344.js": "/precache-manifest.ac0c60c181a0b7ab77a42c2a87852344.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.ef68e3ed.chunk.css.map": "/static/css/main.ef68e3ed.chunk.css.map",
     "static/media/myFont.css": "/static/media/39A6A9_1_0.df747564.woff"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8eea71de.js",
     "static/js/2.53a75d91.chunk.js",
     "static/css/main.ef68e3ed.chunk.css",
-    "static/js/main.da556c3f.chunk.js"
+    "static/js/main.d4ddf65f.chunk.js"
   ]
 }

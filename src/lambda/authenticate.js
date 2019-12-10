@@ -18,7 +18,7 @@ exports.handler = async (event, context, callback) => {
   if (event.httpMethod === 'OPTIONS'){
     preflight(callback);
   } else {
-  const data = event.body;
+    const data = JSON.parse(event.body);
     if (data.pass = "lume_staffs"){
     	return callback(null, {
     		statusCode: 200, 
